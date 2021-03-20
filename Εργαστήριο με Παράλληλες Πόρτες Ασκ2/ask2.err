@@ -1,0 +1,4 @@
+>>> Warning 203 "ask2.c" Line 12(1,1): Condition always TRUE
+      Memory usage:   ROM=0%      RAM=0% - 0%
+      0 Errors,  1 Warnings.
+Build Successful.

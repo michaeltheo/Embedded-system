@@ -1,0 +1,32 @@
+#include <main.h>
+
+#byte PORTB=0xF81
+#byte PORTD=0xF83
+
+
+
+
+
+void main()
+{
+    set_tris_b(0xff);
+    set_tris_d(0x00);
+
+int i=5;
+  
+    while(TRUE){
+        PORTD=0b00000000;
+
+        int8 repeats=PORTB;
+        for(i<7;i++)
+        {
+            PORTD=0b11111111;
+            delay_ms(100);
+            PORTD=0b00000000;
+            delay_ms(100);
+        }
+            
+}
+}
+
+

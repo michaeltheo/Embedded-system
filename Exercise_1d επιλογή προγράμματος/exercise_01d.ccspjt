@@ -1,0 +1,20 @@
+[PROJECT]
+Target=exercise_01d.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=exercise_01d.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[exercise_01d.c]
+Type=4
+[mru-list]
+1=exercise_01d.c
+[Units]
+Count=1
+1=exercise_01d (main)
+[Opened Files]
+1=exercise_01d.c
+2=..\Εργαστήριο με Παράλληλες Πόρτες Ασκ1\ask1Lab.c
+3=

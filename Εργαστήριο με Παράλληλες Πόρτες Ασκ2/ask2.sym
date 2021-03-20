@@ -1,0 +1,66 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.patronimo
+006     main.a
+007     @delay_ms1.P1
+F81     PORTB
+F83     PSP_DATA
+F83     PORTD
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000808  @delay_ms1
+000834  @cinit1
+000834  main
+000844  @cinit2
+
+Project Directory:
+    F:\Embedded Systems\Εργαστήριο με Παράλληλες Πόρτες Ασκ2\
+
+Project Files:
+    ask2.c                                                  [18-Μαρ-21 13:03  CRC=D8102B21]
+    main.h                                                  [26-Οκτ-13 07:54  CRC=0813682B]
+    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 15:40  CRC=A157EDDE]
+
+Source signature=22D36F08
+
+Units:
+    ask2 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   ask2.xsym
+    Errors:      ask2.err
+    Ext Symbols: ask2.esym
+    INHX32:      ask2.hex
+    Symbols:     ask2.sym
+    List:        ask2.lst
+    Debug/COFF:  ask2.cof
+    Project:     ask2.ccspjt
+    Call Tree:   ask2.tre
+    Statistics:  ask2.STA

@@ -1,0 +1,21 @@
+[PROJECT]
+Target=ask1Lab.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=ask1Lab.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[ask1Lab.c]
+Type=4
+[mru-list]
+1=ask1Lab.c
+[Opened Files]
+1=ask1Lab.c
+2=..\Εργαστήριο με Παράλληλες Πόρτες Ασκ2\ask2.c
+3=
+4=
+[Units]
+Count=1
+1=ask1Lab (main)

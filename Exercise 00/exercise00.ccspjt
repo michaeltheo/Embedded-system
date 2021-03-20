@@ -1,0 +1,19 @@
+[PROJECT]
+Target=exercise00.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=exercise00.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[exercise00.c]
+Type=4
+[mru-list]
+1=exercise00.c
+[Opened Files]
+1=exercise00.c
+2=
+[Units]
+Count=1
+1=exercise00 (main)

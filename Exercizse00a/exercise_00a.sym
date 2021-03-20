@@ -1,0 +1,61 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+F81     PORTB
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000808  main
+000808  @cinit1
+000818  @cinit2
+
+Project Directory:
+    F:\Embedded Systems\Exercizse00a\
+
+Project Files:
+    exercise_00a.c                                          [04-Μαρ-21 12:22  CRC=15E63F0C]
+    main.h                                                  [26-Οκτ-13 07:54  CRC=0813682B]
+    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 15:40  CRC=A157EDDE]
+
+Source signature=60A982F3
+
+Units:
+    exercise_00a (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   exercise_00a.xsym
+    Errors:      exercise_00a.err
+    Ext Symbols: exercise_00a.esym
+    INHX32:      exercise_00a.hex
+    Symbols:     exercise_00a.sym
+    List:        exercise_00a.lst
+    Debug/COFF:  exercise_00a.cof
+    Project:     exercise_00a.ccspjt
+    Call Tree:   exercise_00a.tre
+    Statistics:  exercise_00a.STA

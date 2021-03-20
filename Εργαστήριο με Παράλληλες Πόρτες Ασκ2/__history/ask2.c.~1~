@@ -1,0 +1,67 @@
+#include <main.h>
+
+#byte PORTB=0xF81
+#byte PORTD=0xF83
+
+void main () 
+{ 
+    set_tris_b(0xFF);
+    set_tris_d(0x00);
+int eponymo=8;
+    while(1)
+    {
+        int answear=PORTB;
+        if(input(PIN_B0))
+        {
+            output_bit(PIN_D0,1);
+        }else{
+            output_bit(PIN_D0,0);
+        }
+        if(input(PIN_B1))
+        {
+            output_bit(PIN_D1,1);
+        }else{
+            output_bit(PIN_D1,0);
+        }
+        if(input(PIN_B2))
+        {
+            output_bit(PIN_D2,1);
+        }else{
+            output_bit(PIN_D2,0);
+        }
+        if(input(PIN_B3))
+        {
+            output_bit(PIN_D3,1);
+        }else{
+            output_bit(PIN_D3,0);
+        }
+        if(input(PIN_B4))
+        {
+            output_bit(PIN_D4,1);
+        }else{
+            output_bit(PIN_D4,0);
+        }
+        if(input(PIN_B5))
+        {
+            output_bit(PIN_D5,1);
+        }else{
+            output_bit(PIN_D5,0);
+        }
+        if(input(PIN_B6))
+        {
+            output_bit(PIN_D6,1);
+        }else{
+            output_bit(PIN_D6,0);
+        }
+        if(input(PIN_B7))
+        {
+            output_bit(PIN_D7,1);
+        }else{
+            output_bit(PIN_D7,0);
+        }
+
+    PORTD=eponymo*6;
+    delay_ms(200);
+
+    }
+}

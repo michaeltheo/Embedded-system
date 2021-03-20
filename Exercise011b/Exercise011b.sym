@@ -1,0 +1,66 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.a
+006     main.onoma
+007     main.eponyma
+008     main.@SCRATCH1
+F81     PORTB
+F83     PSP_DATA
+F83     PORTD
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000808  main
+000808  @cinit1
+000818  @cinit2
+
+Project Directory:
+    F:\Embedded Systems\Exercise011b\
+
+Project Files:
+    Exercise011b.c                                          [10-Μαρ-21 10:27  CRC=0886E292]
+    main.h                                                  [10-Μαρ-21 09:28  CRC=0813682B]
+    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 15:40  CRC=A157EDDE]
+
+Source signature=534A2679
+
+Units:
+    Exercise011b (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   Exercise011b.xsym
+    Errors:      Exercise011b.err
+    Ext Symbols: Exercise011b.esym
+    INHX32:      Exercise011b.hex
+    Symbols:     Exercise011b.sym
+    List:        Exercise011b.lst
+    Debug/COFF:  Exercise011b.cof
+    Project:     Exercise011b.ccspjt
+    Call Tree:   Exercise011b.tre
+    Statistics:  Exercise011b.STA

@@ -1,0 +1,24 @@
+#include <main.h>
+
+#byte PORTB=0xF81
+#byte PORTD=0xF83
+
+void main () 
+{ 
+    set_tris_b(0xFF);
+    set_tris_d(0x00);
+    int patronimo=7;
+    int a=patronimo*6;
+    int b;
+    delay_ms(200);
+    while(1)
+    {
+       PORTD=PORTB;
+       b=PORTD;
+       set_tris_d(bit_set(b));
+       delay_ms(100);
+       set_tris_d(bit_set(a));  
+       delay_ms(200);
+
+    }
+}

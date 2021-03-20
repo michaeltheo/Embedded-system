@@ -1,0 +1,17 @@
+#include <main.h>
+
+#byte PORTB=0xF81
+#byte PORTD=0xF83
+
+
+void main()
+{
+    set_tris_b(0xff);
+    set_tris_d(0x00);
+
+    int i;
+    while(TRUE){
+        delay_ms(100);
+        PORTD=~PORTB;
+    }
+}

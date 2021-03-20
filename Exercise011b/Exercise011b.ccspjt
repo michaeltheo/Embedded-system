@@ -1,0 +1,20 @@
+[PROJECT]
+Target=Exercise011b.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=Exercise011b.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[Exercise011b.c]
+Type=4
+[mru-list]
+1=Exercise011b.c
+[Opened Files]
+1=Exercise011b.c
+2=..\Exercise_1b PARALAGI πόρτα εισόδου -εξόδου\paralagi.c
+3=
+[Units]
+Count=1
+1=Exercise011b (main)

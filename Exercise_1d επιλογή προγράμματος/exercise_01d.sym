@@ -1,0 +1,67 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.a
+006     main.i
+007     @delay_ms1.P1
+F81     PORTB
+F83     PSP_DATA
+F83     PORTD
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000808  @delay_ms1
+000834  main
+000834  @cinit1
+000844  @cinit2
+0008D6  @goto10582
+
+Project Directory:
+    F:\Embedded Systems\Exercise_1d επιλογή προγράμματος\
+
+Project Files:
+    exercise_01d.c                                          [16-Μαρ-21 15:51  CRC=12FD9776]
+    main.h                                                  [16-Μαρ-21 14:09  CRC=0813682B]
+    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 15:40  CRC=A157EDDE]
+
+Source signature=5DC0DB5D
+
+Units:
+    exercise_01d (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   exercise_01d.xsym
+    Errors:      exercise_01d.err
+    Ext Symbols: exercise_01d.esym
+    INHX32:      exercise_01d.hex
+    Symbols:     exercise_01d.sym
+    List:        exercise_01d.lst
+    Debug/COFF:  exercise_01d.cof
+    Project:     exercise_01d.ccspjt
+    Call Tree:   exercise_01d.tre
+    Statistics:  exercise_01d.STA

@@ -1,0 +1,20 @@
+[PROJECT]
+Target=paralagi.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=paralagi.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[paralagi.c]
+Type=4
+[mru-list]
+1=paralagi.c
+[Opened Files]
+1=paralagi.c
+2=..\Exercise_1d επιλογή προγράμματος\exercise_01d.c
+3=
+[Units]
+Count=1
+1=paralagi (main)
