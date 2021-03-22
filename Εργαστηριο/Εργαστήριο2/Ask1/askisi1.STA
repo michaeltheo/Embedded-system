@@ -1,47 +1,47 @@
 
-ROM used:   212/32768 (1%)
-            216/32768 (1%) including unused fragments
+ROM used:   250/32768 (1%)
+            254/32768 (1%) including unused fragments
 
-            0.2 Average locations per line
-            7.6 Average locations per statement
+            0.3 Average locations per line
+            8.3 Average locations per statement
 
 RAM used:   5/2048 (0%) at main() level
-            8/2048 (0%) worst case
+            7/2048 (0%) worst case
 
 Stack used: 1 worst case (1 in main + 0 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   46    28 100  ask1.c
+   46    30 100  askisi1.c
    68     0   0  main.h
   821     0   0  M:\CSS\Devices\18F4550.h
 ----- -----
-  935    28 Total
+  935    30 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     44  10    1             @delay_ms1
-0    164  39    1   812  6.3  main
+0     44   9    1             @delay_ms1
+0    202  40    1   773  5.8  main
  Inline         0             @cinit1
 
 Program metrics:
     Functions               1
-    Statements              28
+    Statements              30
     Comments                156
-    Volume (V)              817
-    Difficulty (D)          6.1
-    Effort to implement (E) 4957
-    Time to implement (T)   5 minutes
+    Volume (V)              778
+    Difficulty (D)          5.6
+    Effort to implement (E) 4348
+    Time to implement (T)   4 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   5
-    Maintainability (MI)    105
+    Maintainability (MI)    104
 
  Segment     Used  Free
 -----------  ----  ----
 00000-007FE     0  2048  
 00800-00806     4  4  
-00808-07FFE   208  30504  
+00808-07FFE   246  30466  
 
 
 

@@ -1,17 +1,17 @@
-CCS PCH C Compiler, Version 5.011, 5967               22-Μαρ-21 21:14
+CCS PCH C Compiler, Version 5.011, 5967               22-Μαρ-21 22:44
 
-               Filename:   F:\Embedded Systems\Embedded-system\Εργαστήριο2\Ask1\ask1.lst
+               Filename:   F:\Embedded Systems\Εργαστήριο2\Ask1\askisi1.lst
 
-               ROM used:   212 bytes (1%)
-                           Largest free fragment is 30504
+               ROM used:   250 bytes (1%)
+                           Largest free fragment is 30466
                RAM used:   5 (0%) at main() level
-                           8 (0%) worst case
+                           7 (0%) worst case
                Stack used: 1 locations
                Stack size: 31
 
 *
 0800:  GOTO   0834
-.................... #include <main.h> 
+.................... #include <main.h>  
 .................... #include <18F4550.h> 
 .................... //////// Standard Header file for the PIC18F4550 device //////////////// 
 .................... #device PIC18F4550 
@@ -65,7 +65,7 @@ CCS PCH C Compiler, Version 5.011, 5967               22-Μαρ-21 21:14
 .................... #use delay(clock=48000000,RESTART_WDT) 
 *
 0808:  CLRF   FEA
-080A:  MOVLW  08
+080A:  MOVLW  07
 080C:  MOVWF  FE9
 080E:  MOVF   FEF,W
 0810:  BZ    0832
@@ -108,11 +108,14 @@ CCS PCH C Compiler, Version 5.011, 5967               22-Μαρ-21 21:14
 ....................  
 ....................  
 ....................  
-....................  
-.................... #byte PORTB=0xF81 
+....................                    
+.................... #byte PORTB=0xF81  
 .................... #byte PORTD=0xF83 
+....................         
+....................                    
 ....................  
-.................... void main() 
+....................  
+.................... void main(void){ 
 0834:  CLRF   FF8
 0836:  BSF    FD0.7
 0838:  MOVF   FC1,W
@@ -121,118 +124,135 @@ CCS PCH C Compiler, Version 5.011, 5967               22-Μαρ-21 21:14
 083E:  MOVWF  FC1
 0840:  MOVLW  07
 0842:  MOVWF  FB4
-.................... { 
 ....................  
-.................... set_tris_b(0x00); 
+.................... set_tris_b(0x00);   
 0844:  MOVLW  00
 0846:  MOVWF  F93
-.................... set_tris_d(0xFF); 
+.................... set_tris_d(0xff); 
 0848:  MOVLW  FF
 084A:  MOVWF  F95
 ....................  
-.................... int answear,i; 
-.................... while (TRUE) 
-.................... { 
-....................     answear=PORTD; 
-084C:  MOVFF  F83,05
-....................     if(answear%2==0) 
-0850:  MOVF   05,W
-0852:  ANDLW  01
-0854:  BNZ   087A
-....................     { 
+....................  
+.................... int i; 
+....................    while(TRUE) { 
+....................       if(PORTD%2==0) { 
+084C:  MOVF   F83,W
+084E:  ANDLW  01
+0850:  BNZ   0884
 ....................         for(i=0;i<10;i++){ 
-0856:  CLRF   06
-0858:  MOVF   06,W
-085A:  SUBLW  09
-085C:  BNC   0878
-....................             output_bit(PIN_B0,1); 
-085E:  BSF    F8A.0
-0860:  BCF    F93.0
-....................             delay_ms(2000); 
-0862:  MOVLW  08
+0852:  CLRF   05
+0854:  MOVF   05,W
+0856:  SUBLW  09
+0858:  BNC   0882
+....................             output_high(PIN_B0); 
+085A:  BCF    F93.0
+085C:  BSF    F8A.0
+....................             delay_ms(1000); 
+085E:  MOVLW  04
+0860:  MOVWF  06
+0862:  MOVLW  FA
 0864:  MOVWF  07
-0866:  MOVLW  FA
-0868:  MOVWF  08
-086A:  RCALL  0808
-086C:  DECFSZ 07,F
-086E:  BRA    0866
-....................             output_bit(PIN_B0,0); 
-0870:  BCF    F8A.0
-0872:  BCF    F93.0
-0874:  INCF   06,F
-0876:  BRA    0858
+0866:  RCALL  0808
+0868:  DECFSZ 06,F
+086A:  BRA    0862
+....................             output_low(PIN_B0); 
+086C:  BCF    F93.0
+086E:  BCF    F8A.0
+....................             delay_ms(1000); 
+0870:  MOVLW  04
+0872:  MOVWF  06
+0874:  MOVLW  FA
+0876:  MOVWF  07
+0878:  RCALL  0808
+087A:  DECFSZ 06,F
+087C:  BRA    0874
+087E:  INCF   05,F
+0880:  BRA    0854
 ....................         } 
-....................     }else{ 
-0878:  BRA    08C6
-....................         if(input(PIN_D7)) 
-087A:  BSF    F95.7
-087C:  BTFSS  F83.7
-087E:  BRA    08A4
-....................         { 
-....................           for(i=0;i<5;i++) 
-0880:  CLRF   06
-0882:  MOVF   06,W
-0884:  SUBLW  04
-0886:  BNC   08A2
-....................           { 
-....................             output_bit(PIN_B1,1); 
-0888:  BSF    F8A.1
-088A:  BCF    F93.1
-....................             delay_ms(2000); 
-088C:  MOVLW  08
-088E:  MOVWF  07
-0890:  MOVLW  FA
-0892:  MOVWF  08
-0894:  RCALL  0808
-0896:  DECFSZ 07,F
-0898:  BRA    0890
-....................             output_bit(PIN_B1,0);  
-089A:  BCF    F8A.1
-089C:  BCF    F93.1
-089E:  INCF   06,F
-08A0:  BRA    0882
-....................           } 
-....................         }else{ 
-08A2:  BRA    08C6
-....................             for(i=0;i<2;i++) 
-08A4:  CLRF   06
-08A6:  MOVF   06,W
-08A8:  SUBLW  01
-08AA:  BNC   08C6
-....................           { 
-....................             output_bit(PIN_B2,1); 
-08AC:  BSF    F8A.2
-08AE:  BCF    F93.2
-....................             delay_ms(2000); 
-08B0:  MOVLW  08
-08B2:  MOVWF  07
-08B4:  MOVLW  FA
-08B6:  MOVWF  08
-08B8:  RCALL  0808
-08BA:  DECFSZ 07,F
-08BC:  BRA    08B4
-....................             output_bit(PIN_B2,0);  
-08BE:  BCF    F8A.2
-08C0:  BCF    F93.2
-08C2:  INCF   06,F
-08C4:  BRA    08A6
-....................           } 
-....................         } 
-....................     } 
-....................     delay_ms(3000); 
-08C6:  MOVLW  0C
-08C8:  MOVWF  07
-08CA:  MOVLW  FA
-08CC:  MOVWF  08
-08CE:  RCALL  0808
-08D0:  DECFSZ 07,F
-08D2:  BRA    08CA
-08D4:  BRA    084C
+....................       } 
+0882:  BRA    08FA
+....................       else{ 
+....................          if(input(PIN_D7)){ 
+0884:  BSF    F95.7
+0886:  BTFSS  F83.7
+0888:  BRA    08BC
+....................             for(i=0;i<5;i++) 
+088A:  CLRF   05
+088C:  MOVF   05,W
+088E:  SUBLW  04
+0890:  BNC   08BA
+....................             { 
+....................             output_high(PIN_B1); 
+0892:  BCF    F93.1
+0894:  BSF    F8A.1
+....................             delay_ms(1000); 
+0896:  MOVLW  04
+0898:  MOVWF  06
+089A:  MOVLW  FA
+089C:  MOVWF  07
+089E:  RCALL  0808
+08A0:  DECFSZ 06,F
+08A2:  BRA    089A
+....................             output_low(PIN_B1); 
+08A4:  BCF    F93.1
+08A6:  BCF    F8A.1
+....................             delay_ms(1000);} 
+08A8:  MOVLW  04
+08AA:  MOVWF  06
+08AC:  MOVLW  FA
+08AE:  MOVWF  07
+08B0:  RCALL  0808
+08B2:  DECFSZ 06,F
+08B4:  BRA    08AC
+08B6:  INCF   05,F
+08B8:  BRA    088C
+....................          }else{ 
+08BA:  BRA    08EC
+....................             for(i=0;i<2;i++){ 
+08BC:  CLRF   05
+08BE:  MOVF   05,W
+08C0:  SUBLW  01
+08C2:  BNC   08EC
+....................             output_high(PIN_B2); 
+08C4:  BCF    F93.2
+08C6:  BSF    F8A.2
+....................             delay_ms(1000); 
+08C8:  MOVLW  04
+08CA:  MOVWF  06
+08CC:  MOVLW  FA
+08CE:  MOVWF  07
+08D0:  RCALL  0808
+08D2:  DECFSZ 06,F
+08D4:  BRA    08CC
+....................             output_low(PIN_B2); 
+08D6:  BCF    F93.2
+08D8:  BCF    F8A.2
+....................             delay_ms(1000);} 
+08DA:  MOVLW  04
+08DC:  MOVWF  06
+08DE:  MOVLW  FA
+08E0:  MOVWF  07
+08E2:  RCALL  0808
+08E4:  DECFSZ 06,F
+08E6:  BRA    08DE
+08E8:  INCF   05,F
+08EA:  BRA    08BE
+....................          } 
+....................        
+....................       delay_ms(3000); 
+08EC:  MOVLW  0C
+08EE:  MOVWF  06
+08F0:  MOVLW  FA
+08F2:  MOVWF  07
+08F4:  RCALL  0808
+08F6:  DECFSZ 06,F
+08F8:  BRA    08F0
+....................    } 
+08FA:  BRA    084C
 .................... } 
-....................  
-....................  
 .................... } 
-08D6:  SLEEP 
+....................      
+08FC:  SLEEP 
 
 Configuration Fuses:
    Word  1: 0E24   PLL5 CPUDIV1 USBDIV HSPLL NOFCMEN NOIESO
