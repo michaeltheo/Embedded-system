@@ -6,37 +6,51 @@
 //msf 2^7
 //lsf 2^0
 
+int8 pattern=0;
+int8 leds[8]={1,2,4,8,16,64,128};
 
-void main()
+void pattern1(void);
+void pattern2(void);
+void pattern3(void);
+
+
+
+void main(){
+
+set_tris_b(0x00);
+set_tris_d(0xFF);
+
+pattern=PORTD;
+
+while(1){
+
+if(pattern == 0x00 )
 {
-set_tris_b(0x00);  
-set_tris_d(0xff);
-int i,leds_on,leds_flash;
-while(TRUE){
-    leds_flash=0;
-    leds_on=0;
-for(i=0;i<=3;i++ )
-{
-    if(bit_test(PORTD,i))
-    {
-        leds_flash++;
-    }
+    pattern1()
 }
-// for(i=4;i<=7;i++ )
-// {
-//     if(input_state(PORTD))
-//     {
-//         leds_on++;
-//     }
-// }
-
-while(leds_flash!=0){
-    PORTB=0xff;
-    delay_ms(100);
-    PORTB=0x00;
-    leds_flash--;
-
+if(pattern == 0x0f )
+{
+ pattern2()
+}
+if(pattern == 0xFF )
+{
+  pattern3();
 }
 delay_ms(300);
 }
+}
+
+void pattern1(void){
+    PORTB=0x00;
+}
+void pattern2(void){
+    int8 i;
+    for(i=0 ; i<=4 ;++)
+    {
+        PORTB=PORTB/2;
+        delay_ms(1000);
+    }
+}
+void pattern3(){
+    
 }
