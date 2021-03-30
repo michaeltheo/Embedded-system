@@ -4,25 +4,26 @@
 002     @SCRATCH
 003     @SCRATCH
 005     main.i
-006     main.@SCRATCH1
-007     @delay_ms1.P1
+006     main.answear
+007     main.@SCRATCH1
+008     @delay_ms1.P1
 F81     PORTB
-F83     PORTD
 F83     PSP_DATA
+F83     PORTD
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2_LOW
 FBB     CCP_2
+FBB     CCP_2_LOW
 FBC     CCP_2_HIGH
-FBE     CCP_1_LOW
 FBE     CCP_1
+FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
-FE1-FE2 @WRITE_PACKED_MEMORY.P1
-FE1-FE2 @READ_PACKED_MEMORY.P2
-FE9-FEA @READ_PROGRAM_MEMORY.P1
-FE9-FEA @WRITE_PROGRAM_MEMORY.P2
-FE9-FEA @READ_PACKED_MEMORY.P3
-FE9-FEA @WRITE_PACKED_MEMORY.P4
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
 FF6-FF8 @READ_PROGRAM_MEMORY.P2
 
@@ -33,14 +34,14 @@ ROM Allocation:
 000844  @cinit2
 
 Project Directory:
-    F:\Embedded Systems\Εργαστήριο2\Ask1\
+    F:\Embedded Systems\Εργαστηριο\Εργαστήριο2\Ask1\
 
 Project Files:
-    askisi1.c                                               [22-Μαρ-21 22:44  CRC=A5CDFE7A]
-    main.h                                                  [26-Οκτ-13 07:54  CRC=0813682B]
-    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 15:40  CRC=A157EDDE]
+    askisi1.c                                               [30-Μαρ-21 20:23  CRC=8D3BD972]
+    main.h                                                  [26-Οκτ-13 08:54  CRC=0813682B]
+    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 16:40  CRC=A157EDDE]
 
-Source signature=F0914261
+Source signature=D7FF1D59
 
 Units:
     askisi1 (main)

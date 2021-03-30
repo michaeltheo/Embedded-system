@@ -9,12 +9,12 @@
 void main(void){
 
 set_tris_b(0x00);  
-set_tris_d(0xFF);
+set_tris_d(0xff);
 
 
 int i;
    while(TRUE) {
-      int answear=input_d();
+      int answear=PORTD;
       if(answear%2==0) {
         for(i=0;i<10;i++){
             output_bit(PIN_B0,1);

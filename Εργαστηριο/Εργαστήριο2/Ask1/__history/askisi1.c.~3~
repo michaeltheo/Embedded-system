@@ -9,7 +9,7 @@
 void main(void){
 
 set_tris_b(0x00);  
-set_tris_d(0xFF);
+set_tris_d(0xff);
 
 
 int i;
