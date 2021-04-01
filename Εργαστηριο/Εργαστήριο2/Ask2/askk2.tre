@@ -1,6 +1,9 @@
 ÀÄaskk2
-   ÀÄmain  0/114  Ram=1
+   ÀÄmain  0/140  Ram=1
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄ@delay_ms1  0/44  Ram=1
       ÃÄ@delay_ms1  0/44  Ram=1
-      ÀÄ@delay_ms1  0/44  Ram=1
+      ÃÄpattern2  0/50  Ram=2
+      ³  ÀÄ@delay_ms1  0/44  Ram=1
+      ÀÄpattern3  0/48  Ram=2
+         ÀÄ@delay_ms1  0/44  Ram=1

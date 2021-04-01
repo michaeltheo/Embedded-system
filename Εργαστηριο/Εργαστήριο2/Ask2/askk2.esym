@@ -1,7 +1,7 @@
-D G "__PCH__" 0 54 ""5.011""
-D G "__DEVICE__" 0 54 "4550"
-D G "__DATE__" 0 54 ""23-Μαρ-21""
-D G "__TIME__" 0 54 ""11:50:29"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 0 ""5.011""
+D G "__DEVICE__" 0 0 ""
+D G "__DATE__" 0 0 ""01-Απρ-21""
+D G "__TIME__" 0 0 ""13:00:45"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 5 21 "FUNCTION"
 v L "value" 2 36 "int8" `54 
 f B "set_tris_a" 2 36 "void(int8 value)" `53 
@@ -902,12 +902,18 @@ d G "INT_SPP" 2 817 "0x009D80"
 d G "INT_USB" 2 818 "0x00A020"
 C L "jump_to_irs" 1 10 5 "FUNCTION"
 C L "jump_to_irs" 1 10 1 "FUNCTION"
-C L "jump_to_irs" 0 6 2 "FUNCTION"
-F G "main" 0 11 "void()" `636 
-V L "i" 0 14 "int8" `639 
-V L "leds_on" 0 14 "int8" `640 
-V L "leds_flash" 0 14 "int8" `641 
-C L "main" 0 6 3 "FUNCTION"
+V G "leds" 0 6 "int8[8]" `636 
+f G "pattern2" 0 17 "void()" `637 
+f G "pattern3" 0 18 "void()" `638 
+F G "main" 0 22 "void()" `639 
+V L "a" 0 26 "int8" `642 
+V L "b" 0 27 "int8" `643 
+V L "i" 0 28 "int8" `644 
+V L "m" 0 29 "int8" `645 
+F G "pattern2" 0 53 "void()" `637  "O?inioo?iaoio pattern2"
+V L "i" 0 54 "int8" `646 
+F G "pattern3" 0 61 "void()" `638 
+V L "i" 0 62 "int8" `647 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

@@ -3,46 +3,54 @@
 001     _RETURN_
 002     @SCRATCH
 003     @SCRATCH
-005     main.i
-006     main.leds_on
-007     main.leds_flash
-008     main.@SCRATCH1
-009     @delay_ms1.P1
+004-00B leds
+00C     main.a
+00D     main.b
+00E     main.i
+00F     main.m
+010     pattern2.i
+010     pattern3.i
+010     main.@SCRATCH1
+011     pattern2.@SCRATCH1
+011     pattern3.@SCRATCH1
+012     @delay_ms1.P1
 F81     PORTB
-F83     PSP_DATA
 F83     PORTD
+F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2
 FBB     CCP_2_LOW
+FBB     CCP_2
 FBC     CCP_2_HIGH
 FBE     CCP_1_LOW
 FBE     CCP_1
 FBF     CCP_1_HIGH
 FE1-FE2 @READ_PACKED_MEMORY.P1
 FE1-FE2 @WRITE_PACKED_MEMORY.P2
-FE9-FEA @READ_PROGRAM_MEMORY.P1
-FE9-FEA @WRITE_PACKED_MEMORY.P2
-FE9-FEA @READ_PACKED_MEMORY.P3
-FE9-FEA @WRITE_PROGRAM_MEMORY.P4
-FF6-FF8 @READ_PROGRAM_MEMORY.P1
-FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 000808  @delay_ms1
-000834  @cinit1
-000834  main
-000844  @cinit2
+000834  pattern2
+000866  pattern3
+000896  main
+000896  @cinit1
+0008A6  @cinit2
 
 Project Directory:
     F:\Embedded Systems\Εργαστηριο\Εργαστήριο2\Ask2\
 
 Project Files:
-    askk2.c                                                 [23-Μαρ-21 11:49  CRC=0D236335]
-    main.h                                                  [26-Οκτ-13 07:54  CRC=0813682B]
-    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 15:40  CRC=A157EDDE]
+    askk2.c                                                 [01-Απρ-21 13:00  CRC=E1DCA779]
+    main.h                                                  [26-Οκτ-13 08:54  CRC=0813682B]
+    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 16:40  CRC=A157EDDE]
 
-Source signature=57E6A71C
+Source signature=2C9FEB60
 
 Units:
     askk2 (main)

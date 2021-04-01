@@ -1,47 +1,49 @@
 
-ROM used:   162/32768 (0%)
-            166/32768 (1%) including unused fragments
+ROM used:   286/32768 (1%)
+            290/32768 (1%) including unused fragments
 
-            0.2 Average locations per line
-            7.4 Average locations per statement
+            0.3 Average locations per line
+            10.6 Average locations per statement
 
-RAM used:   5/2048 (0%) at main() level
-            9/2048 (0%) worst case
+RAM used:   13/2048 (1%) at main() level
+            19/2048 (1%) worst case
 
-Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack used: 2 worst case (2 in main + 0 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   53    22 100  askk2.c
+   68    27 100  askk2.c
    68     0   0  main.h
   821     0   0  M:\CSS\Devices\18F4550.h
 ----- -----
-  942    22 Total
+  957    27 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     44  14    1             @delay_ms1
-0    114  35    1   516  5.7  main
+0     44   8    1             @delay_ms1
+0    140  24    1   550  5.1  main
+0     50   9    2   144  3.9  pattern2
+0     48   8    2   131  3.5  pattern3
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               1
-    Statements              22
-    Comments                165
-    Volume (V)              520
-    Difficulty (D)          5.4
-    Effort to implement (E) 2832
-    Time to implement (T)   3 minutes
+    Functions               3
+    Statements              27
+    Comments                157
+    Volume (V)              1043
+    Difficulty (D)          12.6
+    Effort to implement (E) 13155
+    Time to implement (T)   12 minutes
     Est Delivered Bugs (B)  0
-    Cyclomatic Complexity   2
-    Maintainability (MI)    131
+    Cyclomatic Complexity   4
+    Maintainability (MI)    56
 
  Segment     Used  Free
 -----------  ----  ----
 00000-007FE     0  2048  
 00800-00806     4  4  
-00808-07FFE   158  30554  
+00808-07FFE   282  30430  
 
 
 

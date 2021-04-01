@@ -1,17 +1,17 @@
-CCS PCH C Compiler, Version 5.011, 5967               23-Μαρ-21 11:50
+CCS PCH C Compiler, Version 5.011, 5967               01-Απρ-21 13:00
 
                Filename:   F:\Embedded Systems\Εργαστηριο\Εργαστήριο2\Ask2\askk2.lst
 
-               ROM used:   162 bytes (0%)
-                           Largest free fragment is 30554
-               RAM used:   5 (0%) at main() level
-                           9 (0%) worst case
-               Stack used: 1 locations
+               ROM used:   286 bytes (1%)
+                           Largest free fragment is 30430
+               RAM used:   13 (1%) at main() level
+                           19 (1%) worst case
+               Stack used: 2 locations
                Stack size: 31
 
 *
-0800:  GOTO   0834
-.................... #include <main.h> 
+0800:  GOTO   0896
+.................... #include<main.h> 
 .................... #include <18F4550.h> 
 .................... //////// Standard Header file for the PIC18F4550 device //////////////// 
 .................... #device PIC18F4550 
@@ -65,7 +65,7 @@ CCS PCH C Compiler, Version 5.011, 5967               23-Μαρ-21 11:50
 .................... #use delay(clock=48000000,RESTART_WDT) 
 *
 0808:  CLRF   FEA
-080A:  MOVLW  09
+080A:  MOVLW  12
 080C:  MOVWF  FE9
 080E:  MOVF   FEF,W
 0810:  BZ    0832
@@ -108,113 +108,189 @@ CCS PCH C Compiler, Version 5.011, 5967               23-Μαρ-21 11:50
 ....................  
 ....................  
 ....................  
-.................... #byte PORTB=0xF81  
-.................... #byte PORTD=0xF83 
 ....................  
+.................... #byte PORTB = 0xF81 
+.................... #byte PORTD = 0xF83 
 ....................  
-.................... //msf 2^7 
-.................... //lsf 2^0 
+.................... int8 leds[8] = { 
+....................   1, 
+....................   2, 
+....................   4, 
+....................   8, 
+....................   16, 
+....................   32, 
+....................   64, 
+....................   128 
+.................... }; 
 ....................  
+.................... void pattern2(void); 
+.................... void pattern3(void); 
 ....................  
 .................... void main() 
-0834:  CLRF   FF8
-0836:  BSF    FD0.7
-0838:  MOVF   FC1,W
-083A:  ANDLW  C0
-083C:  IORLW  0F
-083E:  MOVWF  FC1
-0840:  MOVLW  07
-0842:  MOVWF  FB4
+*
+0896:  CLRF   FF8
+0898:  BSF    FD0.7
+089A:  MOVF   FC1,W
+089C:  ANDLW  C0
+089E:  IORLW  0F
+08A0:  MOVWF  FC1
+08A2:  MOVLW  07
+08A4:  MOVWF  FB4
+08A6:  MOVLW  01
+08A8:  MOVWF  04
+08AA:  MOVLW  02
+08AC:  MOVWF  05
+08AE:  MOVLW  04
+08B0:  MOVWF  06
+08B2:  MOVLW  08
+08B4:  MOVWF  07
+08B6:  MOVLW  10
+08B8:  MOVWF  08
+08BA:  MOVLW  20
+08BC:  MOVWF  09
+08BE:  MOVLW  40
+08C0:  MOVWF  0A
+08C2:  MOVLW  80
+08C4:  MOVWF  0B
+....................  
 .................... { 
-.................... set_tris_b(0x00);   
-0844:  MOVLW  00
-0846:  MOVWF  F93
-.................... set_tris_d(0xff); 
-0848:  MOVLW  FF
-084A:  MOVWF  F95
-.................... int i,leds_on,leds_flash; 
-.................... while(TRUE){ 
-....................     leds_flash=0; 
-084C:  CLRF   07
-....................     leds_on=0; 
-084E:  CLRF   06
-.................... for(i=0;i<=3;i++ ) 
-0850:  CLRF   05
-0852:  MOVF   05,W
-0854:  SUBLW  03
-0856:  BNC   0874
-.................... { 
-....................     if(bit_test(PORTD,i)) 
-0858:  MOVFF  F83,00
-085C:  MOVF   05,W
-085E:  MOVWF  01
-0860:  BZ    086A
-0862:  BCF    FD8.0
-0864:  RRCF   00,F
-0866:  DECFSZ 01,F
-0868:  BRA    0862
-086A:  BTFSS  00.0
-086C:  BRA    0870
-....................     { 
-....................         leds_flash++; 
-086E:  INCF   07,F
-....................     } 
-0870:  INCF   05,F
-0872:  BRA    0852
+....................   set_tris_b(0x00); 
+08C6:  MOVLW  00
+08C8:  MOVWF  F93
+....................   set_tris_d(0xff); 
+08CA:  MOVLW  FF
+08CC:  MOVWF  F95
+....................  
+....................   int a; 
+....................   int b; 
+....................   int i; 
+....................   int m; 
+....................  
+....................   PORTB = 0x00; 
+08CE:  CLRF   F81
+....................   a = PORTD & 0xF0; 
+08D0:  MOVF   F83,W
+08D2:  ANDLW  F0
+08D4:  MOVWF  0C
+....................   a = a >> 4; 
+08D6:  SWAPF  0C,F
+08D8:  MOVLW  0F
+08DA:  ANDWF  0C,F
+....................  
+....................   b = PORTD & 0x0F; 
+08DC:  MOVF   F83,W
+08DE:  ANDLW  0F
+08E0:  MOVWF  0D
+....................  
+....................   while(TRUE) { 
+....................      for (i = 0; i < a; i++) { 
+08E2:  CLRF   0E
+08E4:  MOVF   0C,W
+08E6:  SUBWF  0E,W
+08E8:  BC    090E
+....................        PORTB = 0xff; 
+08EA:  SETF   F81
+....................        delay_ms(500); 
+08EC:  MOVLW  02
+08EE:  MOVWF  10
+08F0:  MOVLW  FA
+08F2:  MOVWF  12
+08F4:  RCALL  0808
+08F6:  DECFSZ 10,F
+08F8:  BRA    08F0
+....................        PORTB = 0x00; 
+08FA:  CLRF   F81
+....................        delay_ms(500); 
+08FC:  MOVLW  02
+08FE:  MOVWF  10
+0900:  MOVLW  FA
+0902:  MOVWF  12
+0904:  RCALL  0808
+0906:  DECFSZ 10,F
+0908:  BRA    0900
+090A:  INCF   0E,F
+090C:  BRA    08E4
+....................      } 
+....................     
+....................      for (m = 0; m < b; m++) { 
+090E:  CLRF   0F
+0910:  MOVF   0D,W
+0912:  SUBWF  0F,W
+0914:  BC    091E
+....................        pattern2(); 
+0916:  BRA    0834
+....................        pattern3(); 
+0918:  BRA    0866
+091A:  INCF   0F,F
+091C:  BRA    0910
+....................     
+....................      } 
+091E:  BRA    08E2
+....................   } 
 .................... } 
 ....................  
-....................     PORTB=0b11100000; 
-0874:  MOVLW  E0
-0876:  MOVWF  F81
-....................     delay_ms(100); 
-0878:  MOVLW  64
-087A:  MOVWF  09
-087C:  RCALL  0808
-....................     PORTB=0b11100000; 
-087E:  MOVLW  E0
-0880:  MOVWF  F81
-....................  
-....................  
-.................... // for(i=4;i<=7;i++ ) 
-.................... // { 
-.................... //     if(input_state(PORTD)) 
-.................... //     { 
-.................... //         leds_on++; 
-.................... //     } 
-.................... // } 
-....................  
-.................... while(leds_flash!=0){ 
-0882:  MOVF   07,F
-0884:  BZ    0894
-....................     PORTB=0xff; 
-0886:  SETF   F81
-....................     delay_ms(100); 
-0888:  MOVLW  64
-088A:  MOVWF  09
-088C:  RCALL  0808
-....................     PORTB=0x00; 
-088E:  CLRF   F81
-....................     leds_flash--; 
-0890:  DECF   07,F
-0892:  BRA    0882
-....................  
+0920:  SLEEP 
+.................... void pattern2(void) { // O?inioo?iaoio pattern2           
+....................   int8 i; 
+....................   for (i = 8; i > 0; i--) { 
+*
+0834:  MOVLW  08
+0836:  MOVWF  10
+0838:  MOVF   10,F
+083A:  BZ    0862
+....................     PORTB = leds[i - 1]; 
+083C:  MOVLW  01
+083E:  SUBWF  10,W
+0840:  CLRF   03
+0842:  ADDLW  04
+0844:  MOVWF  FE9
+0846:  MOVLW  00
+0848:  ADDWFC 03,W
+084A:  MOVWF  FEA
+084C:  MOVFF  FEF,F81
+....................     delay_ms(500); 
+0850:  MOVLW  02
+0852:  MOVWF  11
+0854:  MOVLW  FA
+0856:  MOVWF  12
+0858:  RCALL  0808
+085A:  DECFSZ 11,F
+085C:  BRA    0854
+085E:  DECF   10,F
+0860:  BRA    0838
+....................   } 
+0862:  GOTO   0918 (RETURN)
 .................... } 
-.................... delay_ms(300); 
-0894:  MOVLW  02
-0896:  MOVWF  08
-0898:  MOVLW  96
-089A:  MOVWF  09
-089C:  RCALL  0808
-089E:  DECFSZ 08,F
-08A0:  BRA    0898
-08A2:  BRA    084C
 ....................  
-....................  
-....................  
-....................  
+.................... void pattern3(void) { 
+....................   int8 i; 
+....................   for (i = 0; i < 8; i++) { 
+0866:  CLRF   10
+0868:  MOVF   10,W
+086A:  SUBLW  07
+086C:  BNC   0892
+....................     PORTB = leds[i]; 
+086E:  CLRF   03
+0870:  MOVF   10,W
+0872:  ADDLW  04
+0874:  MOVWF  FE9
+0876:  MOVLW  00
+0878:  ADDWFC 03,W
+087A:  MOVWF  FEA
+087C:  MOVFF  FEF,F81
+....................     delay_ms(500); 
+0880:  MOVLW  02
+0882:  MOVWF  11
+0884:  MOVLW  FA
+0886:  MOVWF  12
+0888:  RCALL  0808
+088A:  DECFSZ 11,F
+088C:  BRA    0884
+088E:  INCF   10,F
+0890:  BRA    0868
+....................   } 
+0892:  GOTO   091A (RETURN)
 .................... } 
-.................... } 
-08A4:  SLEEP 
 
 Configuration Fuses:
    Word  1: 0E24   PLL5 CPUDIV1 USBDIV HSPLL NOFCMEN NOIESO
