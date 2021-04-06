@@ -1,0 +1,20 @@
+[PROJECT]
+Target=exc5b.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=exc5b.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[exc5b.c]
+Type=4
+[mru-list]
+1=exc5b.c
+[Opened Files]
+1=exc5b.c
+2=
+3=
+[Units]
+Count=1
+1=exc5b (main)
