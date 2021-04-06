@@ -1,0 +1,6 @@
+青Ask
+   青main  0/36  Ram=0
+      団@cinit1  (Inline)  Ram=0
+      青pushbutton  0/32  Ram=1
+         団@delay_ms1  0/44  Ram=1
+         青@delay_ms1  0/44  Ram=1
