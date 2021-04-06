@@ -1,0 +1,23 @@
+ÀÄask
+   ÃÄmain  0/86  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄinit  0/18  Ram=0
+   ³  ÃÄ@delay_ms1  0/44  Ram=1
+   ³  ÀÄ@delay_ms1  0/44  Ram=1
+   ÀÄext_int1  0/166  Ram=0
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÀÄ@delay_ms1  0/44  Ram=1

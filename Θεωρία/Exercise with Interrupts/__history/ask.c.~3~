@@ -1,0 +1,35 @@
+#include <main.h>
+#byte PORTD=0xF83
+
+
+void init(void);
+void ext_int1(void);
+
+void main(){
+    init();
+while (TRUE)
+{
+    PORTD=0xff;
+    delay_ms(100);
+    PORTD=PORTD^0xff;
+    delay_ms(100);
+}
+}
+
+
+void init(){
+    set_tris_d(0x00);
+    PORTD=0x00;
+    ext_int_edge(1,H_TO_L); //energopoisei diakopis kata tin metavasi apo 1 se 0
+    enable_interrupts(GLOBAL);
+    enable_interrupts(INT_EXT1);
+}
+
+#INT_EXT1
+void ext_int1(){
+    for(int8 i =1,i<=8, i ++)
+    {
+        PORTD=PORTD/2;
+        delay_ms(100);
+    }
+}

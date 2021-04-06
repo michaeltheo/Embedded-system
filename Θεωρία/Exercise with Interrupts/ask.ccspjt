@@ -1,0 +1,20 @@
+[PROJECT]
+Target=ask.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=ask.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[ask.c]
+Type=4
+[mru-list]
+1=ask.c
+[Opened Files]
+1=ask.c
+2=C:\Users\Michael\AppData\Local\Temp\Rar$DIa15108.47544\exercise-4B.c
+3=
+[Units]
+Count=1
+1=ask (main)
