@@ -1,0 +1,259 @@
+CCS PCH C Compiler, Version 5.011, 5967               07-Απρ-21 19:10
+
+               Filename:   F:\Embedded Systems\Εργαστηριο\Εργαστήριο 3\Ασκ1\ask1.lst
+
+               ROM used:   284 bytes (1%)
+                           Largest free fragment is 31648
+               RAM used:   23 (1%) at main() level
+                           24 (1%) worst case
+               Stack used: 2 locations (1 in main + 1 for interrupts)
+               Stack size: 30
+
+*
+0000:  GOTO   0102
+*
+0008:  NOP   
+000A:  NOP   
+000C:  NOP   
+000E:  NOP   
+0010:  NOP   
+0012:  NOP   
+0014:  NOP   
+0016:  NOP   
+0018:  MOVWF  04
+001A:  MOVFF  FD8,05
+001E:  MOVFF  FE0,06
+0022:  MOVLB  0
+0024:  MOVFF  FE9,0C
+0028:  MOVFF  FEA,07
+002C:  MOVFF  FE1,08
+0030:  MOVFF  FE2,09
+0034:  MOVFF  FD9,0A
+0038:  MOVFF  FDA,0B
+003C:  MOVFF  FF3,12
+0040:  MOVFF  FF4,13
+0044:  MOVFF  FFA,14
+0048:  MOVFF  00,0E
+004C:  MOVFF  01,0F
+0050:  MOVFF  02,10
+0054:  MOVFF  03,11
+0058:  BTFSS  FF0.3
+005A:  GOTO   0064
+005E:  BTFSC  FF0.0
+0060:  GOTO   00B2
+0064:  BTFSS  FF0.4
+0066:  GOTO   0070
+006A:  BTFSC  FF0.1
+006C:  GOTO   00CC
+0070:  MOVFF  0E,00
+0074:  MOVFF  0F,01
+0078:  MOVFF  10,02
+007C:  MOVFF  11,03
+0080:  MOVFF  0C,FE9
+0084:  MOVFF  07,FEA
+0088:  BSF    07.7
+008A:  MOVFF  08,FE1
+008E:  MOVFF  09,FE2
+0092:  MOVFF  0A,FD9
+0096:  MOVFF  0B,FDA
+009A:  MOVFF  12,FF3
+009E:  MOVFF  13,FF4
+00A2:  MOVFF  14,FFA
+00A6:  MOVF   04,W
+00A8:  MOVFF  06,FE0
+00AC:  MOVFF  05,FD8
+00B0:  RETFIE 0
+.................... #include <main-proteus.h> 
+.................... #include <18F4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+.................... #DEVICE HIGH_INTS=TRUE 
+....................  #device icd=2 
+.................... #device adc=10 
+....................  
+.................... #FUSES NOWDT                     //No Watch Dog Timer 
+.................... #FUSES WDT32768                    //Watch Dog Timer uses 1:128 Postscale 
+.................... #FUSES HSPLL                     //High Speed Crystal/Resonator with PLL enabled 
+.................... #FUSES NOPROTECT                 //Code not protected from reading 
+.................... #FUSES BROWNOUT                //No brownout reset 
+.................... //#FUSES BORV20                    //Brownout reset at 2.0V 
+.................... #FUSES NOPUT                     //No Power Up Timer 
+.................... #FUSES NOCPD                     //No EE protection 
+.................... #FUSES STVREN                    //Stack full/underflow will cause reset 
+.................... #FUSES NODEBUG                   //No Debug mode for ICD 
+.................... #FUSES NOLVP                     //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOWRT                     //Program memory not write protected 
+.................... #FUSES NOWRTD                    //Data EEPROM not write protected 
+.................... #FUSES NOIESO                      //Internal External Switch Over mode enabled 
+.................... #FUSES NOFCMEN                     //Fail-safe clock monitor enabled 
+.................... #FUSES NOPBADEN                 ///PORTB pins are configured as analog input channels on RESET 
+.................... #FUSES NOWRTC                    //configuration not registers write protected 
+.................... #FUSES NOWRTB                    //Boot block not write protected 
+.................... #FUSES NOEBTR                    //Memory not protected from table reads 
+.................... #FUSES NOEBTRB                   //Boot block not protected from table reads 
+.................... #FUSES NOCPB                     //No Boot Block code protection 
+.................... #FUSES MCLR                      //Master Clear pin enabled 
+.................... #FUSES NOLPT1OSC                   //Timer1 configured for low-power operation 
+.................... #FUSES NOXINST                   //Extended set extension and Indexed Addressing mode disabled (Legacy mode) 
+.................... #FUSES PLL5                      //Divide By 12(48MHz oscillator input) 
+.................... #FUSES CPUDIV1                   //System Clock by 2 
+.................... #FUSES USBDIV                    //USB clock source comes from PLL divide by 2 
+.................... #FUSES VREGEN                    //USB voltage regulator enabled 
+.................... //#FUSES ICPRT                     //ICPRT enabled 
+.................... #FUSES WRTB 
+.................... #FUSES NOICPRT  
+.................... #FUSES NOLPT1OSC 
+.................... #FUSES CCP2B3  
+.................... #FUSES NOCPB 
+.................... #FUSES NOCPD 
+.................... #FUSES NOWRTC 
+.................... #FUSES NOWRTD 
+.................... #FUSES NOEBTR 
+.................... #FUSES NOEBTRB               
+....................  
+.................... /* systm clock is 48 MHz */ 
+.................... #use delay(clock=48000000,RESTART_WDT) 
+.................... /* --- BEGIN: changes required for bootloader ------------------------------ */ 
+....................  
+.................... /* ------------------------------------------------------------------------- */ 
+.................... /* map reset vector and interrupt vector                                     */ 
+.................... /* 0x000-0x7FF is used by the bootloader. The bootloader maps the original   */ 
+.................... /* reset vecotr (0x000) to 0x800 and the reset vector (0x008) to 0x800.      */ 
+.................... /* ------------------------------------------------------------------------- */ 
+.................... #build (reset=0x000, interrupt=0x008) 
+....................  
+.................... /* ------------------------------------------------------------------------- */ 
+.................... /* reserve boot block area                                                   */ 
+.................... /* This memory range is used by the bootloader, so the application must not  */ 
+.................... /* use this area.                                                            */ 
+.................... /* ------------------------------------------------------------------------- */ 
+.................... //#org 0  , 0x000 {} 
+....................  
+.................... /* --- END: changes required for bootloader -------------------------------- */ 
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... #byte PORTD=0xF83 
+.................... #byte PORTB=0xF81 
+....................  
+....................  
+.................... int8 counter=0; 
+.................... void init(void); 
+.................... void ext_int1(void); 
+.................... void ext_int2(void); 
+....................  
+....................  
+.................... void main() 
+*
+0102:  CLRF   FF8
+0104:  BCF    FF0.6
+0106:  BCF    FF0.7
+0108:  BSF    FD0.7
+010A:  BSF    07.7
+010C:  CLRF   16
+010E:  MOVF   FC1,W
+0110:  ANDLW  C0
+0112:  IORLW  0F
+0114:  MOVWF  FC1
+0116:  MOVLW  07
+0118:  MOVWF  FB4
+.................... { 
+....................     init(); 
+011A:  BRA    00E8
+....................     while (TRUE) 
+....................     { 
+011C:  BRA    011C
+....................     } 
+.................... } 
+....................  
+011E:  BRA    011E
+.................... void init(void){ 
+....................     set_tris_d(0x00); 
+*
+00E8:  MOVLW  00
+00EA:  MOVWF  F95
+....................     set_tris_b(0xFF); 
+00EC:  MOVLW  FF
+00EE:  MOVWF  F93
+....................     enable_interrupts(GLOBAL); 
+00F0:  MOVLW  C0
+00F2:  IORWF  FF2,F
+....................     enable_interrupts(INT_EXT1); //energopoisi diakopwn apo ton akrodekti RB1 
+00F4:  BSF    FF0.3
+....................     ext_int_edge(1,L_TO_H); //energopoisi tis diakopis kata tin metavasi 1 se 0  
+00F6:  BSF    FF1.5
+....................     enable_interrupts(INT_EXT2); 
+00F8:  BSF    FF0.4
+....................     ext_int_edge(2,L_TO_H); 
+00FA:  BSF    FF1.4
+....................     PORTD=0x00; 
+00FC:  CLRF   F83
+00FE:  GOTO   011C (RETURN)
+.................... } 
+....................  
+.................... #INT_EXT1 
+.................... void ext_int1(){ 
+....................     if(input(PIN_B7)==1) 
+*
+00B2:  BSF    F93.7
+00B4:  BTFSS  F81.7
+00B6:  BRA    00C6
+....................     { 
+....................         if(counter !=255 || counter>0 ) 
+00B8:  INCFSZ 16,W
+00BA:  BRA    00C0
+00BC:  MOVF   16,F
+00BE:  BZ    00C6
+....................             {counter++; 
+00C0:  INCF   16,F
+....................              PORTD=counter; 
+00C2:  MOVFF  16,F83
+....................             } 
+....................         } 
+....................     } 
+....................  
+....................  
+....................  
+....................  
+00C6:  BCF    FF0.0
+00C8:  GOTO   0070
+.................... #INT_EXT2 
+.................... void ext_int2(){ 
+....................     if(input(PIN_B7)==0) 
+00CC:  BSF    F93.7
+00CE:  BTFSC  F81.7
+00D0:  BRA    00E2
+....................     { 
+....................         if(counter != 0 && counter<255) 
+00D2:  MOVF   16,F
+00D4:  BZ    00E2
+00D6:  INCFSZ 16,W
+00D8:  BRA    00DC
+00DA:  BRA    00E2
+....................         { 
+....................             counter--; 
+00DC:  DECF   16,F
+....................             PORTD=counter; 
+00DE:  MOVFF  16,F83
+....................         } 
+....................     } 
+....................  
+00E2:  BCF    FF0.1
+00E4:  GOTO   0070
+.................... } 
+
+Configuration Fuses:
+   Word  1: 0E24   PLL5 CPUDIV1 USBDIV HSPLL NOFCMEN NOIESO
+   Word  2: 1E39   NOPUT NOBROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8000   CCP2B3 NOPBADEN NOLPT1OSC MCLR
+   Word  4: 0020   NOSTVREN NOLVP ICSP2 NOXINST DEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
+
+   Some fuses have been forced to be compatible with the ICD debugger.
