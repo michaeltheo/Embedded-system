@@ -1,0 +1,16 @@
+[PROJECT]
+Target=ask.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=ask.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[ask.c]
+Type=4
+[mru-list]
+1=ask.c
+[Units]
+Count=1
+1=ask (main)
