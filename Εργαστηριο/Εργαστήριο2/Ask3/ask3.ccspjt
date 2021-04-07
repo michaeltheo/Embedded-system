@@ -1,0 +1,20 @@
+[PROJECT]
+Target=ask3.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=ask3.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[ask3.c]
+Type=4
+[mru-list]
+1=ask3.c
+[Opened Files]
+1=ask3.c
+2=C:\Users\Michael\Downloads\Telegram Desktop\ask3.c
+3=
+[Units]
+Count=1
+1=ask3 (main)

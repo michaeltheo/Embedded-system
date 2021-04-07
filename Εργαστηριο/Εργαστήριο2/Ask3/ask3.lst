@@ -1,0 +1,204 @@
+CCS PCH C Compiler, Version 5.011, 5967               07-Απρ-21 17:43
+
+               Filename:   F:\Embedded Systems\Εργαστηριο\Εργαστήριο2\Ask3\ask3.lst
+
+               ROM used:   152 bytes (0%)
+                           Largest free fragment is 30564
+               RAM used:   8 (0%) at main() level
+                           9 (0%) worst case
+               Stack used: 1 locations
+               Stack size: 31
+
+*
+0800:  GOTO   0836
+.................... #include <main.h> 
+.................... #include <18F4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+.................... #DEVICE HIGH_INTS=TRUE 
+.................... #device adc=10 
+....................  
+.................... #FUSES NOWDT                     //No Watch Dog Timer 
+.................... #FUSES WDT32768                    //Watch Dog Timer uses 1:128 Postscale 
+.................... #FUSES HSPLL                     //High Speed Crystal/Resonator with PLL enabled 
+.................... #FUSES NOPROTECT                 //Code not protected from reading 
+.................... #FUSES BROWNOUT                //No brownout reset 
+.................... //#FUSES BORV20                    //Brownout reset at 2.0V 
+.................... #FUSES NOPUT                     //No Power Up Timer 
+.................... #FUSES NOCPD                     //No EE protection 
+.................... #FUSES STVREN                    //Stack full/underflow will cause reset 
+.................... #FUSES NODEBUG                   //No Debug mode for ICD 
+.................... #FUSES NOLVP                     //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOWRT                     //Program memory not write protected 
+.................... #FUSES NOWRTD                    //Data EEPROM not write protected 
+.................... #FUSES NOIESO                      //Internal External Switch Over mode enabled 
+.................... #FUSES NOFCMEN                     //Fail-safe clock monitor enabled 
+.................... #FUSES NOPBADEN                 ///PORTB pins are configured as analog input channels on RESET 
+.................... #FUSES NOWRTC                    //configuration not registers write protected 
+.................... #FUSES NOWRTB                    //Boot block not write protected 
+.................... #FUSES NOEBTR                    //Memory not protected from table reads 
+.................... #FUSES NOEBTRB                   //Boot block not protected from table reads 
+.................... #FUSES NOCPB                     //No Boot Block code protection 
+.................... #FUSES MCLR                      //Master Clear pin enabled 
+.................... #FUSES NOLPT1OSC                   //Timer1 configured for low-power operation 
+.................... #FUSES NOXINST                   //Extended set extension and Indexed Addressing mode disabled (Legacy mode) 
+.................... #FUSES PLL5                      //Divide By 12(48MHz oscillator input) 
+.................... #FUSES CPUDIV1                   //System Clock by 2 
+.................... #FUSES USBDIV                    //USB clock source comes from PLL divide by 2 
+.................... #FUSES VREGEN                    //USB voltage regulator enabled 
+.................... #FUSES ICPRT                     //ICPRT enabled 
+.................... #FUSES WRTB 
+.................... #FUSES NOICPRT  
+.................... #FUSES NOLPT1OSC 
+.................... #FUSES CCP2B3  
+.................... #FUSES NOCPB 
+.................... #FUSES NOCPD 
+.................... #FUSES NOWRTC 
+.................... #FUSES NOWRTD 
+.................... #FUSES NOEBTR 
+.................... #FUSES NOEBTRB               
+....................  
+.................... /* systm clock is 48 MHz */ 
+.................... #use delay(clock=48000000,RESTART_WDT) 
+*
+0808:  CLRF   FEA
+080A:  MOVLW  09
+080C:  MOVWF  FE9
+080E:  MOVF   FEF,W
+0810:  BZ    0832
+0812:  MOVLW  0F
+0814:  MOVWF  01
+0816:  MOVLW  BF
+0818:  MOVWF  00
+081A:  CLRWDT
+081C:  DECFSZ 00,F
+081E:  BRA    081A
+0820:  DECFSZ 01,F
+0822:  BRA    0816
+0824:  MOVLW  8F
+0826:  MOVWF  00
+0828:  DECFSZ 00,F
+082A:  BRA    0828
+082C:  CLRWDT
+082E:  DECFSZ FEF,F
+0830:  BRA    0812
+0832:  GOTO   0894 (RETURN)
+.................... /* --- BEGIN: changes required for bootloader ------------------------------ */ 
+....................  
+.................... /* ------------------------------------------------------------------------- */ 
+.................... /* map reset vector and interrupt vector                                     */ 
+.................... /* 0x000-0x7FF is used by the bootloader. The bootloader maps the original   */ 
+.................... /* reset vecotr (0x000) to 0x800 and the reset vector (0x008) to 0x800.      */ 
+.................... /* ------------------------------------------------------------------------- */ 
+.................... #build (reset=0x800, interrupt=0x808) 
+....................  
+.................... /* ------------------------------------------------------------------------- */ 
+.................... /* reserve boot block area                                                   */ 
+.................... /* This memory range is used by the bootloader, so the application must not  */ 
+.................... /* use this area.                                                            */ 
+.................... /* ------------------------------------------------------------------------- */ 
+.................... #org 0, 0x7FF {} 
+....................  
+.................... /* --- END: changes required for bootloader -------------------------------- */ 
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... #byte PORTB=0xF81 
+.................... #byte PORTD=0xF83   
+....................  
+....................  
+.................... void main(){ 
+0836:  CLRF   FF8
+0838:  BSF    FD0.7
+083A:  MOVF   FC1,W
+083C:  ANDLW  C0
+083E:  IORLW  0F
+0840:  MOVWF  FC1
+0842:  MOVLW  07
+0844:  MOVWF  FB4
+....................     int8 lastPortD,ginomeno,b; 
+....................  
+.................... set_tris_b(0x00); 
+0846:  MOVLW  00
+0848:  MOVWF  F93
+.................... set_tris_d(0xff); 
+084A:  MOVLW  FF
+084C:  MOVWF  F95
+....................  
+.................... while (TRUE) 
+.................... { 
+.................... PORTB=0x00; 
+084E:  CLRF   F81
+.................... while (input(PIN_D7)==1) 
+0850:  BSF    F95.7
+0852:  BTFSS  F83.7
+0854:  BRA    085E
+.................... { 
+....................     lastPortD=PORTD & 0x0F; 
+0856:  MOVF   F83,W
+0858:  ANDLW  0F
+085A:  MOVWF  05
+085C:  BRA    0850
+.................... } 
+.................... if(input(PIN_D7)==0) 
+085E:  BSF    F95.7
+0860:  BTFSC  F83.7
+0862:  BRA    088A
+.................... { 
+.................... b=PORTD & 0x0F; 
+0864:  MOVF   F83,W
+0866:  ANDLW  0F
+0868:  MOVWF  07
+.................... ginomeno=lastPortD*b; 
+086A:  MOVF   05,W
+086C:  MULWF  07
+086E:  MOVFF  FF3,06
+.................... if(ginomeno>100) 
+0872:  MOVF   06,W
+0874:  SUBLW  64
+0876:  BC    0882
+.................... { 
+....................     output_high(PIN_B7); 
+0878:  BCF    F93.7
+087A:  BSF    F8A.7
+....................     output_low(PIN_B0); 
+087C:  BCF    F93.0
+087E:  BCF    F8A.0
+.................... } 
+0880:  BRA    088A
+.................... else{ 
+....................     output_high(PIN_B0); 
+0882:  BCF    F93.0
+0884:  BSF    F8A.0
+....................     output_low(PIN_B7); 
+0886:  BCF    F93.7
+0888:  BCF    F8A.7
+.................... } 
+.................... } 
+.................... delay_ms(500); 
+088A:  MOVLW  02
+088C:  MOVWF  08
+088E:  MOVLW  FA
+0890:  MOVWF  09
+0892:  BRA    0808
+0894:  DECFSZ 08,F
+0896:  BRA    088E
+0898:  BRA    084E
+.................... } 
+.................... } 
+089A:  SLEEP 
+
+Configuration Fuses:
+   Word  1: 0E24   PLL5 CPUDIV1 USBDIV HSPLL NOFCMEN NOIESO
+   Word  2: 1E3F   NOPUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8000   CCP2B3 NOPBADEN NOLPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP ICSP1 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: A00F   NOWRT NOWRTC WRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
