@@ -6,7 +6,7 @@
 
 void main(){
     int8 lastPortD,ginomeno,b;
-
+    lastPortD,b=0;
 set_tris_b(0x00);
 set_tris_d(0xff);
 
@@ -20,8 +20,8 @@ if (input(PIN_D7))
 else
 {
 b=PORTD & 0x0F;
-ginomeno=lastPortD*b;
 }
+ginomeno=lastPortD*b;
 if(ginomeno>100)
 {
     output_high(PIN_B7);
