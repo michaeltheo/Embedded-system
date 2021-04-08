@@ -1,17 +1,65 @@
-CCS PCH C Compiler, Version 5.011, 5967               08-Απρ-21 12:39
+CCS PCH C Compiler, Version 5.011, 5967               08-Απρ-21 13:02
 
-               Filename:   F:\Embedded Systems\Εργαστηριο\Εργαστήριο2\Ask3\ask3.lst
+               Filename:   F:\Embedded Systems\Εργαστηριο\Εργαστήριο 3\Ask2\aks2.lst
 
-               ROM used:   148 bytes (0%)
-                           Largest free fragment is 30568
-               RAM used:   8 (0%) at main() level
-                           9 (0%) worst case
-               Stack used: 1 locations
-               Stack size: 31
+               ROM used:   320 bytes (1%)
+                           Largest free fragment is 31612
+               RAM used:   23 (1%) at main() level
+                           26 (1%) worst case
+               Stack used: 3 locations (1 in main + 2 for interrupts)
+               Stack size: 30
 
 *
-0800:  GOTO   0836
-.................... #include <main.h> 
+0000:  GOTO   0128
+*
+0008:  NOP   
+000A:  NOP   
+000C:  NOP   
+000E:  NOP   
+0010:  NOP   
+0012:  NOP   
+0014:  NOP   
+0016:  NOP   
+0018:  MOVWF  04
+001A:  MOVFF  FD8,05
+001E:  MOVFF  FE0,06
+0022:  MOVLB  0
+0024:  MOVFF  FE9,0C
+0028:  MOVFF  FEA,07
+002C:  MOVFF  FE1,08
+0030:  MOVFF  FE2,09
+0034:  MOVFF  FD9,0A
+0038:  MOVFF  FDA,0B
+003C:  MOVFF  FF3,12
+0040:  MOVFF  FF4,13
+0044:  MOVFF  FFA,14
+0048:  MOVFF  00,0E
+004C:  MOVFF  01,0F
+0050:  MOVFF  02,10
+0054:  MOVFF  03,11
+0058:  BTFSS  FF2.3
+005A:  GOTO   0064
+005E:  BTFSC  FF2.0
+0060:  GOTO   00D2
+0064:  MOVFF  0E,00
+0068:  MOVFF  0F,01
+006C:  MOVFF  10,02
+0070:  MOVFF  11,03
+0074:  MOVFF  0C,FE9
+0078:  MOVFF  07,FEA
+007C:  BSF    07.7
+007E:  MOVFF  08,FE1
+0082:  MOVFF  09,FE2
+0086:  MOVFF  0A,FD9
+008A:  MOVFF  0B,FDA
+008E:  MOVFF  12,FF3
+0092:  MOVFF  13,FF4
+0096:  MOVFF  14,FFA
+009A:  MOVF   04,W
+009C:  MOVFF  06,FE0
+00A0:  MOVFF  05,FD8
+00A4:  RETFIE 0
+.................... #include <main-proteus.h> 
 .................... #include <18F4550.h> 
 .................... //////// Standard Header file for the PIC18F4550 device //////////////// 
 .................... #device PIC18F4550 
@@ -19,6 +67,7 @@ CCS PCH C Compiler, Version 5.011, 5967               08-Απρ-21 12:39
 .................... #list 
 ....................  
 .................... #DEVICE HIGH_INTS=TRUE 
+....................  #device icd=2 
 .................... #device adc=10 
 ....................  
 .................... #FUSES NOWDT                     //No Watch Dog Timer 
@@ -49,7 +98,7 @@ CCS PCH C Compiler, Version 5.011, 5967               08-Απρ-21 12:39
 .................... #FUSES CPUDIV1                   //System Clock by 2 
 .................... #FUSES USBDIV                    //USB clock source comes from PLL divide by 2 
 .................... #FUSES VREGEN                    //USB voltage regulator enabled 
-.................... #FUSES ICPRT                     //ICPRT enabled 
+.................... //#FUSES ICPRT                     //ICPRT enabled 
 .................... #FUSES WRTB 
 .................... #FUSES NOICPRT  
 .................... #FUSES NOLPT1OSC 
@@ -63,29 +112,28 @@ CCS PCH C Compiler, Version 5.011, 5967               08-Απρ-21 12:39
 ....................  
 .................... /* systm clock is 48 MHz */ 
 .................... #use delay(clock=48000000,RESTART_WDT) 
-*
-0808:  CLRF   FEA
-080A:  MOVLW  09
-080C:  MOVWF  FE9
-080E:  MOVF   FEF,W
-0810:  BZ    0832
-0812:  MOVLW  0F
-0814:  MOVWF  01
-0816:  MOVLW  BF
-0818:  MOVWF  00
-081A:  CLRWDT
-081C:  DECFSZ 00,F
-081E:  BRA    081A
-0820:  DECFSZ 01,F
-0822:  BRA    0816
-0824:  MOVLW  8F
-0826:  MOVWF  00
-0828:  DECFSZ 00,F
-082A:  BRA    0828
-082C:  CLRWDT
-082E:  DECFSZ FEF,F
-0830:  BRA    0812
-0832:  GOTO   0890 (RETURN)
+00A6:  CLRF   FEA
+00A8:  MOVLW  19
+00AA:  MOVWF  FE9
+00AC:  MOVF   FEF,W
+00AE:  BZ    00D0
+00B0:  MOVLW  0F
+00B2:  MOVWF  01
+00B4:  MOVLW  BF
+00B6:  MOVWF  00
+00B8:  CLRWDT
+00BA:  DECFSZ 00,F
+00BC:  BRA    00B8
+00BE:  DECFSZ 01,F
+00C0:  BRA    00B4
+00C2:  MOVLW  8F
+00C4:  MOVWF  00
+00C6:  DECFSZ 00,F
+00C8:  BRA    00C6
+00CA:  CLRWDT
+00CC:  DECFSZ FEF,F
+00CE:  BRA    00B0
+00D0:  RETURN 0
 .................... /* --- BEGIN: changes required for bootloader ------------------------------ */ 
 ....................  
 .................... /* ------------------------------------------------------------------------- */ 
@@ -93,14 +141,14 @@ CCS PCH C Compiler, Version 5.011, 5967               08-Απρ-21 12:39
 .................... /* 0x000-0x7FF is used by the bootloader. The bootloader maps the original   */ 
 .................... /* reset vecotr (0x000) to 0x800 and the reset vector (0x008) to 0x800.      */ 
 .................... /* ------------------------------------------------------------------------- */ 
-.................... #build (reset=0x800, interrupt=0x808) 
+.................... #build (reset=0x000, interrupt=0x008) 
 ....................  
 .................... /* ------------------------------------------------------------------------- */ 
 .................... /* reserve boot block area                                                   */ 
 .................... /* This memory range is used by the bootloader, so the application must not  */ 
 .................... /* use this area.                                                            */ 
 .................... /* ------------------------------------------------------------------------- */ 
-.................... #org 0, 0x7FF {} 
+.................... //#org 0  , 0x000 {} 
 ....................  
 .................... /* --- END: changes required for bootloader -------------------------------- */ 
 ....................  
@@ -109,95 +157,114 @@ CCS PCH C Compiler, Version 5.011, 5967               08-Απρ-21 12:39
 ....................  
 ....................  
 ....................  
-.................... #byte PORTB=0xF81 
-.................... #byte PORTD=0xF83   
+.................... #byte  PORTB=0xF81 
+.................... #byte  PORTD=0xF83 
 ....................  
 ....................  
-.................... void main(){ 
-0836:  CLRF   FF8
-0838:  BSF    FD0.7
-083A:  MOVF   FC1,W
-083C:  ANDLW  C0
-083E:  IORLW  0F
-0840:  MOVWF  FC1
-0842:  MOVLW  07
-0844:  MOVWF  FB4
-....................     int8 lastPortD,ginomeno,b; 
-....................     lastPortD,b=0; 
-0846:  CLRF   07
-.................... set_tris_b(0x00); 
-0848:  MOVLW  00
-084A:  MOVWF  F93
-.................... set_tris_d(0xff); 
-084C:  MOVLW  FF
-084E:  MOVWF  F95
+.................... int pin=0; 
+.................... void init(void); 
+.................... void rb(void); 
 ....................  
-.................... while (TRUE) 
+....................  
+.................... void main(void) 
+*
+0128:  CLRF   FF8
+012A:  BCF    FF1.0
+012C:  BSF    FD0.7
+012E:  BSF    07.7
+0130:  CLRF   16
+0132:  MOVF   FC1,W
+0134:  ANDLW  C0
+0136:  IORLW  0F
+0138:  MOVWF  FC1
+013A:  MOVLW  07
+013C:  MOVWF  FB4
 .................... { 
-.................... PORTB=0x00; 
-0850:  CLRF   F81
-.................... if (input(PIN_D7)) 
-0852:  BSF    F95.7
-0854:  BTFSS  F83.7
-0856:  BRA    0860
-.................... { 
-....................     lastPortD=PORTD & 0x0F; 
-0858:  MOVF   F83,W
-085A:  ANDLW  0F
-085C:  MOVWF  05
-.................... } 
-085E:  BRA    0866
-.................... else 
-.................... { 
-.................... b=PORTD & 0x0F; 
-0860:  MOVF   F83,W
-0862:  ANDLW  0F
-0864:  MOVWF  07
-.................... } 
-.................... ginomeno=lastPortD*b; 
-0866:  MOVF   05,W
-0868:  MULWF  07
-086A:  MOVFF  FF3,06
-.................... if(ginomeno>100) 
-086E:  MOVF   06,W
-0870:  SUBLW  64
-0872:  BC    087E
-.................... { 
-....................     output_high(PIN_B7); 
-0874:  BCF    F93.7
-0876:  BSF    F8A.7
-....................     output_low(PIN_B0); 
-0878:  BCF    F93.0
-087A:  BCF    F8A.0
-.................... } 
-087C:  BRA    0886
-.................... else{ 
-....................     output_high(PIN_B0); 
-087E:  BCF    F93.0
-0880:  BSF    F8A.0
-....................     output_low(PIN_B7); 
-0882:  BCF    F93.7
-0884:  BCF    F8A.7
+....................     init(); 
+013E:  BRA    0114
+....................     while(TRUE) 
+....................     {} 
+0140:  BRA    0140
 .................... } 
 ....................  
-.................... delay_ms(500); 
-0886:  MOVLW  02
-0888:  MOVWF  08
-088A:  MOVLW  FA
-088C:  MOVWF  09
-088E:  BRA    0808
-0890:  DECFSZ 08,F
-0892:  BRA    088A
-0894:  BRA    0850
+....................  
+.................... #INT_RB 
+.................... void rb() 
+0142:  BRA    0142
+.................... { 
+....................     pin=input_state(PIN_B2); 
+*
+00D2:  CLRF   16
+00D4:  BTFSC  F81.2
+00D6:  INCF   16,F
+....................     if(pin==0) 
+00D8:  MOVF   16,F
+00DA:  BNZ   010A
+....................     { 
+....................         delay_ms(4000); 
+00DC:  MOVLW  10
+00DE:  MOVWF  18
+00E0:  MOVLW  FA
+00E2:  MOVWF  19
+00E4:  RCALL  00A6
+00E6:  DECFSZ 18,F
+00E8:  BRA    00E0
+....................         if(input_state(PIN_B2)==pin) 
+00EA:  MOVLW  00
+00EC:  BTFSC  F81.2
+00EE:  MOVLW  01
+00F0:  SUBWF  16,W
+00F2:  BNZ   010A
+....................         { 
+....................             output_high(PIN_D1); 
+00F4:  BCF    F95.1
+00F6:  BSF    F8C.1
+....................             delay_ms(5000); 
+00F8:  MOVLW  14
+00FA:  MOVWF  18
+00FC:  MOVLW  FA
+00FE:  MOVWF  19
+0100:  RCALL  00A6
+0102:  DECFSZ 18,F
+0104:  BRA    00FC
+....................             output_toggle(PIN_D1); 
+0106:  BCF    F95.1
+0108:  BTG    F8C.1
+....................         } 
+....................     } 
+....................     int a; 
+....................     a=PORTB; 
+010A:  MOVFF  F81,17
+010E:  BCF    FF2.0
+0110:  GOTO   0064
 .................... } 
+....................  
+....................  
+.................... void init() 
+.................... { 
+....................     set_tris_b(0xFF); 
+0114:  MOVLW  FF
+0116:  MOVWF  F93
+....................     set_tris_d(0x00); 
+0118:  MOVLW  00
+011A:  MOVWF  F95
+....................     PORTD=0x00; 
+011C:  CLRF   F83
+....................     enable_interrupts(GLOBAL); 
+011E:  MOVLW  C0
+0120:  IORWF  FF2,F
+....................     enable_interrupts(INT_RB); 
+0122:  BSF    FF2.3
+0124:  GOTO   0140 (RETURN)
 .................... } 
-0896:  SLEEP 
 
 Configuration Fuses:
    Word  1: 0E24   PLL5 CPUDIV1 USBDIV HSPLL NOFCMEN NOIESO
-   Word  2: 1E3F   NOPUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  2: 1E39   NOPUT NOBROWNOUT BORV21 VREGEN NOWDT WDT32768
    Word  3: 8000   CCP2B3 NOPBADEN NOLPT1OSC MCLR
-   Word  4: 0081   STVREN NOLVP ICSP1 NOXINST NODEBUG
+   Word  4: 0020   NOSTVREN NOLVP ICSP2 NOXINST DEBUG
    Word  5: C00F   NOPROTECT NOCPB NOCPD
-   Word  6: A00F   NOWRT NOWRTC WRTB NOWRTD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
    Word  7: 400F   NOEBTR NOEBTRB
+
+   Some fuses have been forced to be compatible with the ICD debugger.

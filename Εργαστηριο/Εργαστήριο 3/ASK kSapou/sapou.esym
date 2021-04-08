@@ -1,7 +1,7 @@
-D G "__PCH__" 0 39 ""5.011""
-D G "__DEVICE__" 0 39 "4550"
-D G "__DATE__" 0 39 ""08-Απρ-21""
-D G "__TIME__" 0 39 ""12:39:30"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 62 ""5.011""
+D G "__DEVICE__" 0 62 "4550"
+D G "__DATE__" 0 62 ""08-Απρ-21""
+D G "__TIME__" 0 62 ""13:13:16"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 5 21 "FUNCTION"
 v L "value" 2 36 "int8" `54 
 f B "set_tris_a" 2 36 "void(int8 value)" `53 
@@ -900,12 +900,16 @@ d G "INT_EEPROM" 2 815 "0x00A010"
 d G "INT_OSCF" 2 816 "0x00A080"
 d G "INT_SPP" 2 817 "0x009D80"
 d G "INT_USB" 2 818 "0x00A020"
-C L "jump_to_irs" 1 10 5 "FUNCTION"
-C L "jump_to_irs" 1 10 1 "FUNCTION"
-F G "main" 0 7 "void()" `636 
-V L "lastPortD" 0 8 "int8" `637 
-V L "ginomeno" 0 8 "int8" `638 
-V L "b" 0 8 "int8" `639 
+C L "jump_to_irs" 1 11 7 "FUNCTION"
+f G "init" 0 10 "void()" `636 
+f G "ext_int1" 0 11 "void()" `637 
+f G "ext_int2" 0 12 "void()" `638 
+F G "main" 0 17 "void()" `639 
+F G "ext_int1" 0 30 "void()" `637 
+V L "i" 0 31 "int8" `642 
+F G "ext_int2" 0 40 "void()" `638 
+V L "i" 0 41 "int8" `643 
+F G "init" 0 51 "void()" `636 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

@@ -1,20 +1,19 @@
 [PROJECT]
-Target=ask3.hex
+Target=sapou.hex
 Processor_Text=PIC18F4550
 CCSVersion=5.011
 Compiler=PCH
 [Target Data]
-FileList=ask3.c
+FileList=sapou.c
 [Directories]
 Include=M:\CSS\Devices\;M:\CSS\Drivers\
-[ask3.c]
+[sapou.c]
 Type=4
 [mru-list]
-1=ask3.c
+1=sapou.c
 [Opened Files]
-1=ask3.c
-2=..\..\Εργαστήριο 3\Ask2\aks2.c
-3=
+1=sapou.c
+2=
 [Units]
 Count=1
-1=ask3 (main)
+1=sapou (main)

@@ -1,0 +1,110 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A     @INTERRUPT_AREA
+01B     @INTERRUPT_AREA
+01C     @INTERRUPT_AREA
+01D     @INTERRUPT_AREA
+01E     @INTERRUPT_AREA
+01F     @INTERRUPT_AREA
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029     main.@SCRATCH1
+02B     ext_int1.i
+02C     ext_int1.@SCRATCH1
+02E     ext_int2.i
+02F     ext_int2.@SCRATCH1
+030     @delay_ms1.P1
+F81     PORTB
+F83     PSP_DATA
+F83     PORTD
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000134  @delay_ms1
+000160  ext_int1
+000184  ext_int2
+0001A8  init
+0001C2  main
+0001C2  @cinit1
+0001D8  @cinit2
+
+Project Directory:
+    F:\Embedded Systems\Εργαστηριο\Εργαστήριο 3\ASK kSapou\
+
+Project Files:
+    sapou.c                                                 [08-Απρ-21 13:12  CRC=997AA7E1]
+    main-proteus.h                                          [10-Μαρ-14 23:41  CRC=9C188644]
+    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 16:40  CRC=A157EDDE]
+
+Source signature=784309E1
+
+Units:
+    sapou (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+
+Output Files:
+    XREF file:   sapou.xsym
+    Errors:      sapou.err
+    Ext Symbols: sapou.esym
+    INHX32:      sapou.hex
+    Symbols:     sapou.sym
+    List:        sapou.lst
+    Debug/COFF:  sapou.cof
+    Project:     sapou.ccspjt
+    Call Tree:   sapou.tre
+    Statistics:  sapou.STA
