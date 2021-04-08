@@ -35,12 +35,10 @@ void ext_int1(){
         if(counter !=255 || counter>0 )
             {counter++;
              PORTD=counter;
+             delay_ms(200);
             }
         }
     }
-
-
-
 
 #INT_EXT2
 void ext_int2(){
@@ -50,6 +48,7 @@ void ext_int2(){
         {
             counter--;
             PORTD=counter;
+             delay_ms(200);
         }
     }
 

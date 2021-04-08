@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.011, 5967               07-Απρ-21 17:43
+CCS PCH C Compiler, Version 5.011, 5967               08-Απρ-21 11:28
 
                Filename:   F:\Embedded Systems\Εργαστηριο\Εργαστήριο2\Ask3\ask3.lst
 
-               ROM used:   152 bytes (0%)
-                           Largest free fragment is 30564
+               ROM used:   146 bytes (0%)
+                           Largest free fragment is 30570
                RAM used:   8 (0%) at main() level
                            9 (0%) worst case
                Stack used: 1 locations
@@ -85,7 +85,7 @@ CCS PCH C Compiler, Version 5.011, 5967               07-Απρ-21 17:43
 082C:  CLRWDT
 082E:  DECFSZ FEF,F
 0830:  BRA    0812
-0832:  GOTO   0894 (RETURN)
+0832:  GOTO   088E (RETURN)
 .................... /* --- BEGIN: changes required for bootloader ------------------------------ */ 
 ....................  
 .................... /* ------------------------------------------------------------------------- */ 
@@ -135,7 +135,7 @@ CCS PCH C Compiler, Version 5.011, 5967               07-Απρ-21 17:43
 .................... { 
 .................... PORTB=0x00; 
 084E:  CLRF   F81
-.................... while (input(PIN_D7)==1) 
+.................... if (input(PIN_D7)) 
 0850:  BSF    F95.7
 0852:  BTFSS  F83.7
 0854:  BRA    085E
@@ -144,55 +144,53 @@ CCS PCH C Compiler, Version 5.011, 5967               07-Απρ-21 17:43
 0856:  MOVF   F83,W
 0858:  ANDLW  0F
 085A:  MOVWF  05
-085C:  BRA    0850
 .................... } 
-.................... if(input(PIN_D7)==0) 
-085E:  BSF    F95.7
-0860:  BTFSC  F83.7
-0862:  BRA    088A
+085C:  BRA    086C
+.................... else 
 .................... { 
 .................... b=PORTD & 0x0F; 
-0864:  MOVF   F83,W
-0866:  ANDLW  0F
-0868:  MOVWF  07
+085E:  MOVF   F83,W
+0860:  ANDLW  0F
+0862:  MOVWF  07
 .................... ginomeno=lastPortD*b; 
-086A:  MOVF   05,W
-086C:  MULWF  07
-086E:  MOVFF  FF3,06
+0864:  MOVF   05,W
+0866:  MULWF  07
+0868:  MOVFF  FF3,06
+.................... } 
 .................... if(ginomeno>100) 
-0872:  MOVF   06,W
-0874:  SUBLW  64
-0876:  BC    0882
+086C:  MOVF   06,W
+086E:  SUBLW  64
+0870:  BC    087C
 .................... { 
 ....................     output_high(PIN_B7); 
-0878:  BCF    F93.7
-087A:  BSF    F8A.7
+0872:  BCF    F93.7
+0874:  BSF    F8A.7
 ....................     output_low(PIN_B0); 
-087C:  BCF    F93.0
-087E:  BCF    F8A.0
+0876:  BCF    F93.0
+0878:  BCF    F8A.0
 .................... } 
-0880:  BRA    088A
+087A:  BRA    0884
 .................... else{ 
 ....................     output_high(PIN_B0); 
-0882:  BCF    F93.0
-0884:  BSF    F8A.0
+087C:  BCF    F93.0
+087E:  BSF    F8A.0
 ....................     output_low(PIN_B7); 
-0886:  BCF    F93.7
-0888:  BCF    F8A.7
+0880:  BCF    F93.7
+0882:  BCF    F8A.7
 .................... } 
-.................... } 
+....................  
 .................... delay_ms(500); 
-088A:  MOVLW  02
-088C:  MOVWF  08
-088E:  MOVLW  FA
-0890:  MOVWF  09
-0892:  BRA    0808
-0894:  DECFSZ 08,F
-0896:  BRA    088E
-0898:  BRA    084E
+0884:  MOVLW  02
+0886:  MOVWF  08
+0888:  MOVLW  FA
+088A:  MOVWF  09
+088C:  BRA    0808
+088E:  DECFSZ 08,F
+0890:  BRA    0888
+0892:  BRA    084E
 .................... } 
 .................... } 
-089A:  SLEEP 
+0894:  SLEEP 
 
 Configuration Fuses:
    Word  1: 0E24   PLL5 CPUDIV1 USBDIV HSPLL NOFCMEN NOIESO
