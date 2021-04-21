@@ -1,0 +1,19 @@
+[PROJECT]
+Target=ASK3.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=ASK3.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[ASK3.c]
+Type=4
+[mru-list]
+1=ASK3.c
+[Opened Files]
+1=ASK3.C
+2=
+[Units]
+Count=1
+1=ASK3 (main)

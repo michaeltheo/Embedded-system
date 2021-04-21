@@ -1,0 +1,55 @@
+#include <main_.h>
+
+#byte PORTB=0xF81;
+
+int8 counter;
+
+
+void timer0_int(void);
+void init(void);
+
+
+void main()
+{
+init();
+while (1)
+{
+
+}}
+
+
+
+void  init (void)
+{
+    set_tris_b(0x00);
+    counter=2;
+    setup_timer_0(T0_INTERNAL|T0_DIV_128);
+    set_timer0(53817);
+    enable_interrupts(INT_TIMER0);
+    enable_interrupts(GLOBAL);
+}
+
+
+#INT_TIMER0
+void timer0_int(){
+    set_timer0(53817);
+    if(input(PIN_B1))
+    {
+        output_toggle(PIN_B4);
+        counter--;
+        if(counter==0)
+        {
+            counter=0;
+            output_toggle(PIN_B7);
+        }
+    }
+    else{
+        output_toggle(PIN_B7);
+        counter--;
+        if(counter==0)
+        {
+            counter=0;
+            output_toggle(PIN_B4);
+        }
+    }
+}

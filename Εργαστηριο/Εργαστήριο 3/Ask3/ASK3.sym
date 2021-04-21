@@ -1,0 +1,106 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A     @INTERRUPT_AREA
+01B     @INTERRUPT_AREA
+01C     @INTERRUPT_AREA
+01D     @INTERRUPT_AREA
+01E     @INTERRUPT_AREA
+01F     @INTERRUPT_AREA
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     ext_int2.i
+02A     ext_int0.i
+02B     @delay_ms1.P1
+F81     PORTB
+F83     PSP_DATA
+F83     PORTD
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000134  @delay_ms1
+000160  ext_int0
+00017C  ext_int2
+000198  init
+0001B2  main
+0001B2  @cinit1
+0001C6  @cinit2
+
+Project Directory:
+    F:\Embedded Systems\Εργαστηριο\Εργαστήριο 3\Ask3\
+
+Project Files:
+    ASK3.c                                                  [15-Απρ-21 11:38  CRC=109E7369]
+    main-proteus.h                                          [10-Μαρ-14 23:41  CRC=9C188644]
+    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 16:40  CRC=A157EDDE]
+
+Source signature=EF66D569
+
+Units:
+    ASK3 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+
+Output Files:
+    XREF file:   ASK3.xsym
+    Errors:      ASK3.err
+    Ext Symbols: ASK3.esym
+    INHX32:      ASK3.hex
+    Symbols:     ASK3.sym
+    List:        ASK3.lst
+    Debug/COFF:  ASK3.cof
+    Project:     ASK3.ccspjt
+    Call Tree:   ASK3.tre
+    Statistics:  ASK3.STA

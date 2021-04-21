@@ -1,0 +1,4 @@
+>>> Warning 203 "ASk1.c" Line 17(1,1): Condition always TRUE
+      Memory usage:   ROM=1%      RAM=1% - 1%
+      0 Errors,  1 Warnings.
+Build Successful.
