@@ -1,0 +1,75 @@
+//gia msb T=250 ms ,ara 125 tha einai off kai 125 tha einai on 
+//gia lsb T=200 ms ,ara 100 tha einai off kai 100 tha einai on
+// pernoume xrono diakopis xrono mikrotero tou 100
+// pou dierei oles tis imiperiodous px 25ms
+
+//gia 25ms
+//LSb tha kanoun toogle kathe 100ms ara counter=4
+//MSb tha kanoun toogle kathe 125ms ara counter=5
+
+// set timer
+// 25000000=83.333*128*(65536-x) => x=63192.2
+
+
+
+
+
+#include "main_.h"
+
+#byte PORTB=0xF81
+
+
+
+int8 counter100ms=4;
+int8 counter125ms=5;
+
+
+
+void timer0_int(void);
+void init(void);
+
+void main()
+{
+init();
+while (1)
+{
+
+}}
+
+
+void  init (void)
+{   
+    
+    set_tris_b(0x00);
+    set_tris_d(0xff);
+    setup_timer_0(T0_INTERNAL|T0_DIV_128);
+    set_timer0(63192);
+    enable_interrupts(INT_TIMER0);
+    enable_interrupts(GLOBAL);
+}
+
+#INT_TIMER0
+void timer0_int(){
+    set_timer0(63192);
+    counter100ms--;
+    counter125ms--;
+
+if(input_state(PIN_D0))
+{
+    if (counter125ms==0)
+    {
+        counter125ms=5;
+        PORTB=PORTB^0b11110000;
+    }
+}else{
+    if (counter100ms==0)
+    {
+        counter100ms=4;
+        PORTB=PORTB^0b00001111;
+    }
+}
+}
+
+    
+
+    
