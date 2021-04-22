@@ -1,0 +1,102 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A     @INTERRUPT_AREA
+01B     @INTERRUPT_AREA
+01C     @INTERRUPT_AREA
+01D     @INTERRUPT_AREA
+01E     @INTERRUPT_AREA
+01F     @INTERRUPT_AREA
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     seconds
+F83     PORTD
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000134  timer0_int
+000144  ext_int
+000150  init
+000172  main
+000172  @cinit1
+000188  @cinit2
+
+Project Directory:
+    F:\Embedded Systems\Εργαστηριο\Εργαστήριο 4\AskSapou\
+
+Project Files:
+    AskSapou.c                                              [22-Απρ-21 14:49  CRC=F27723F1]
+    main-proteus.h                                          [11-Μαρ-14 00:41  CRC=9C188644]
+    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 16:40  CRC=A157EDDE]
+
+Source signature=D13F85F1
+
+Units:
+    AskSapou (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+
+Output Files:
+    XREF file:   AskSapou.xsym
+    Errors:      AskSapou.err
+    Ext Symbols: AskSapou.esym
+    INHX32:      AskSapou.hex
+    Symbols:     AskSapou.sym
+    List:        AskSapou.lst
+    Debug/COFF:  AskSapou.cof
+    Project:     AskSapou.ccspjt
+    Call Tree:   AskSapou.tre
+    Statistics:  AskSapou.STA

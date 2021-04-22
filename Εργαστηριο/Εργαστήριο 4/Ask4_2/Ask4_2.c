@@ -1,13 +1,13 @@
-// 0.25 hz = 4sec = 4000ms 
-// 1hz = 1sec 1000ms 
-// 2hz = 0.5sec 500ms
-// 4hz = 0.25sec 250ms
-// 10hz=0.1 100ms 
+// 0.25 hz = 4sec = 4000ms  imiperiodos 2000 
+// 1hz = 1sec 1000ms  imiperiodos 500
+// 2hz = 0.5sec 500ms imiperiodos 250
+// 4hz = 0.25sec 250ms imiperiodos 125
+// 10hz=0.1 100ms imiperiodos 50
 
-// pernoume xrono diakopis xrono mikrotero tou 100
-// pou dierei oles ti periodous px 50ms
+// pernoume xrono diakopis xrono mikrotero tou 100 αλλα να διαιρει και ολα τα υπολοιπα
+// pou dierei oles ti periodous px 25ms
 
-// gia 50 ms 
+// gia 25 ms 
 // 10hz counter na einai 2
 // 4hz counter na einai 5
 // 2hz counter na einai 10
@@ -15,7 +15,7 @@
 // 0.25hz counter na einai 80
 
 // set timer
-// 50000000=83.333*128*(65536-x) => x=60848.5
+// 25000000=83.333*128*(65536-x) => x=63192.2
 
 #include "main_.h"
 
@@ -46,14 +46,14 @@ void  init (void)
     set_tris_b(0x00);
     set_tris_d(0xff);
     setup_timer_0(T0_INTERNAL|T0_DIV_128);
-    set_timer0(60848);
+    set_timer0(63192);
     enable_interrupts(INT_TIMER0);
     enable_interrupts(GLOBAL);
 }
 
 #INT_TIMER0
 void timer0_int(){
-    set_timer0(60848);
+    set_timer0(63192);
     counter0_25--;
     counter10--;
     counter1--;

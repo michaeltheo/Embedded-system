@@ -1,0 +1,20 @@
+[PROJECT]
+Target=AskSapou.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=AskSapou.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[AskSapou.c]
+Type=4
+[mru-list]
+1=AskSapou.c
+[Opened Files]
+1=AskSapou.c
+2=C:\Users\Michael\AppData\Local\Temp\Rar$DIa4428.29108\4a.c
+3=
+[Units]
+Count=1
+1=AskSapou (main)

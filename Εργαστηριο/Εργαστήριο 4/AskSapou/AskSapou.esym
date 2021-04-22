@@ -1,8 +1,8 @@
-D G "__PCH__" 0 97 ""5.011""
-D G "__DEVICE__" 0 97 "4550"
-D G "__DATE__" 0 97 ""22-Απρ-21""
-D G "__TIME__" 0 97 ""14:20:08"" "0.25 hz = 4sec = 4000ms  imiperiodos 2000"
-c L "set_tris_a" 0 2 14 "FUNCTION"
+D G "__PCH__" 0 53 ""5.011""
+D G "__DEVICE__" 0 53 "4550"
+D G "__DATE__" 0 53 ""22-Απρ-21""
+D G "__TIME__" 0 53 ""14:55:17"" "Askisi stin opoia kathe fora pou pataw to RBO (button) emfanizei stin PORTD posa deuterolepta perasan"
+c L "set_tris_a" 0 2 4 "FUNCTION"
 c L "set_tris_a" 2 1 22 "FUNCTION"
 v L "value" 2 36 "int8" `54 
 f B "set_tris_a" 2 36 "void(int8 value)" `53 
@@ -901,17 +901,15 @@ d G "INT_EEPROM" 2 815 "0x00A010"
 d G "INT_OSCF" 2 816 "0x00A080"
 d G "INT_SPP" 2 817 "0x009D80"
 d G "INT_USB" 2 818 "0x00A020"
-C L "jump_to_irs" 1 9 17 "FUNCTION"
-V G "counter0_25" 0 24 "int8" `635 
-V G "counter1" 0 25 "int8" `636 
-V G "counter2" 0 26 "int8" `637 
-V G "counter4" 0 27 "int8" `638 
-V G "counter10" 0 28 "int8" `639 
-f G "timer0_int" 0 31 "void()" `640 
-f G "init" 0 32 "void()" `641 
-F G "main" 0 35 "void()" `642 
-F G "init" 0 44 "void()" `641 
-F G "timer0_int" 0 55 "void()" `640 
+C L "jump_to_irs" 1 11 7 "FUNCTION"
+f G "init" 0 14 "void()" `635 
+f G "timer0_int" 0 15 "void()" `636 
+f G "ext_int" 0 16 "void()" `637 
+V G "seconds" 0 17 "int8" `638 
+F G "main" 0 20 "void()" `639 
+F G "init" 0 28 "void()" `635 
+F G "timer0_int" 0 41 "void()" `636 
+F G "ext_int" 0 48 "void()" `637 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

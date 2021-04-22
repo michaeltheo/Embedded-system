@@ -1,0 +1,279 @@
+CCS PCH C Compiler, Version 5.011, 5967               22-Απρ-21 14:55
+
+               Filename:   F:\Embedded Systems\Εργαστηριο\Εργαστήριο 4\AskSapou\AskSapou.lst
+
+               ROM used:   394 bytes (1%)
+                           Largest free fragment is 31538
+               RAM used:   41 (2%) at main() level
+                           41 (2%) worst case
+               Stack used: 2 locations (1 in main + 1 for interrupts)
+               Stack size: 30
+
+*
+0000:  GOTO   0172
+*
+0008:  GOTO   009A
+000C:  NOP   
+000E:  NOP   
+0010:  NOP   
+0012:  NOP   
+0014:  NOP   
+0016:  NOP   
+0018:  MOVWF  04
+001A:  MOVFF  FD8,05
+001E:  MOVFF  FE0,06
+0022:  MOVLB  0
+0024:  MOVFF  FE9,0C
+0028:  MOVFF  FEA,07
+002C:  MOVFF  FE1,08
+0030:  MOVFF  FE2,09
+0034:  MOVFF  FD9,0A
+0038:  MOVFF  FDA,0B
+003C:  MOVFF  FF3,12
+0040:  MOVFF  FF4,13
+0044:  MOVFF  FFA,14
+0048:  MOVFF  00,0E
+004C:  MOVFF  01,0F
+0050:  MOVFF  02,10
+0054:  MOVFF  03,11
+0058:  MOVFF  0E,00
+005C:  MOVFF  0F,01
+0060:  MOVFF  10,02
+0064:  MOVFF  11,03
+0068:  MOVFF  0C,FE9
+006C:  MOVFF  07,FEA
+0070:  BSF    07.7
+0072:  MOVFF  08,FE1
+0076:  MOVFF  09,FE2
+007A:  MOVFF  0A,FD9
+007E:  MOVFF  0B,FDA
+0082:  MOVFF  12,FF3
+0086:  MOVFF  13,FF4
+008A:  MOVFF  14,FFA
+008E:  MOVF   04,W
+0090:  MOVFF  06,FE0
+0094:  MOVFF  05,FD8
+0098:  RETFIE 0
+009A:  MOVWF  16
+009C:  MOVFF  FD8,17
+00A0:  MOVFF  FE0,18
+00A4:  MOVLB  0
+00A6:  MOVFF  FE9,1E
+00AA:  MOVFF  FEA,19
+00AE:  MOVFF  FE1,1A
+00B2:  MOVFF  FE2,1B
+00B6:  MOVFF  FD9,1C
+00BA:  MOVFF  FDA,1D
+00BE:  MOVFF  FF3,24
+00C2:  MOVFF  FF4,25
+00C6:  MOVFF  FFA,26
+00CA:  MOVFF  00,20
+00CE:  MOVFF  01,21
+00D2:  MOVFF  02,22
+00D6:  MOVFF  03,23
+00DA:  BTFSS  FF2.5
+00DC:  GOTO   00E6
+00E0:  BTFSC  FF2.2
+00E2:  GOTO   0134
+00E6:  BTFSS  FF2.4
+00E8:  GOTO   00F2
+00EC:  BTFSC  FF2.1
+00EE:  GOTO   0144
+00F2:  MOVFF  20,00
+00F6:  MOVFF  21,01
+00FA:  MOVFF  22,02
+00FE:  MOVFF  23,03
+0102:  MOVFF  1E,FE9
+0106:  MOVFF  19,FEA
+010A:  BSF    19.7
+010C:  MOVFF  1A,FE1
+0110:  MOVFF  1B,FE2
+0114:  MOVFF  1C,FD9
+0118:  MOVFF  1D,FDA
+011C:  MOVFF  24,FF3
+0120:  MOVFF  25,FF4
+0124:  MOVFF  26,FFA
+0128:  MOVF   16,W
+012A:  MOVFF  18,FE0
+012E:  MOVFF  17,FD8
+0132:  RETFIE 0
+.................... //Askisi stin opoia kathe fora pou pataw to RBO (button) emfanizei stin PORTD posa deuterolepta perasan  
+.................... //apo tin telautaia ofora pou to patisa 
+.................... //o xronos diakopis einai se 1 sec to counter exei time int8 kathws to PORTB mporei 
+.................... // na parei times mexri 255 
+.................... //set timer 1000000000=83.333*256*(65536-x)=18660 
+....................  
+.................... #include <main-proteus.h> 
+.................... #include <18F4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+.................... #DEVICE HIGH_INTS=TRUE 
+....................  #device icd=2 
+.................... #device adc=10 
+....................  
+.................... #FUSES NOWDT                     //No Watch Dog Timer 
+.................... #FUSES WDT32768                    //Watch Dog Timer uses 1:128 Postscale 
+.................... #FUSES HSPLL                     //High Speed Crystal/Resonator with PLL enabled 
+.................... #FUSES NOPROTECT                 //Code not protected from reading 
+.................... #FUSES BROWNOUT                //No brownout reset 
+.................... //#FUSES BORV20                    //Brownout reset at 2.0V 
+.................... #FUSES NOPUT                     //No Power Up Timer 
+.................... #FUSES NOCPD                     //No EE protection 
+.................... #FUSES STVREN                    //Stack full/underflow will cause reset 
+.................... #FUSES NODEBUG                   //No Debug mode for ICD 
+.................... #FUSES NOLVP                     //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOWRT                     //Program memory not write protected 
+.................... #FUSES NOWRTD                    //Data EEPROM not write protected 
+.................... #FUSES NOIESO                      //Internal External Switch Over mode enabled 
+.................... #FUSES NOFCMEN                     //Fail-safe clock monitor enabled 
+.................... #FUSES NOPBADEN                 ///PORTB pins are configured as analog input channels on RESET 
+.................... #FUSES NOWRTC                    //configuration not registers write protected 
+.................... #FUSES NOWRTB                    //Boot block not write protected 
+.................... #FUSES NOEBTR                    //Memory not protected from table reads 
+.................... #FUSES NOEBTRB                   //Boot block not protected from table reads 
+.................... #FUSES NOCPB                     //No Boot Block code protection 
+.................... #FUSES MCLR                      //Master Clear pin enabled 
+.................... #FUSES NOLPT1OSC                   //Timer1 configured for low-power operation 
+.................... #FUSES NOXINST                   //Extended set extension and Indexed Addressing mode disabled (Legacy mode) 
+.................... #FUSES PLL5                      //Divide By 12(48MHz oscillator input) 
+.................... #FUSES CPUDIV1                   //System Clock by 2 
+.................... #FUSES USBDIV                    //USB clock source comes from PLL divide by 2 
+.................... #FUSES VREGEN                    //USB voltage regulator enabled 
+.................... //#FUSES ICPRT                     //ICPRT enabled 
+.................... #FUSES WRTB 
+.................... #FUSES NOICPRT  
+.................... #FUSES NOLPT1OSC 
+.................... #FUSES CCP2B3  
+.................... #FUSES NOCPB 
+.................... #FUSES NOCPD 
+.................... #FUSES NOWRTC 
+.................... #FUSES NOWRTD 
+.................... #FUSES NOEBTR 
+.................... #FUSES NOEBTRB               
+....................  
+.................... /* systm clock is 48 MHz */ 
+.................... #use delay(clock=48000000,RESTART_WDT) 
+.................... /* --- BEGIN: changes required for bootloader ------------------------------ */ 
+....................  
+.................... /* ------------------------------------------------------------------------- */ 
+.................... /* map reset vector and interrupt vector                                     */ 
+.................... /* 0x000-0x7FF is used by the bootloader. The bootloader maps the original   */ 
+.................... /* reset vecotr (0x000) to 0x800 and the reset vector (0x008) to 0x800.      */ 
+.................... /* ------------------------------------------------------------------------- */ 
+.................... #build (reset=0x000, interrupt=0x008) 
+....................  
+.................... /* ------------------------------------------------------------------------- */ 
+.................... /* reserve boot block area                                                   */ 
+.................... /* This memory range is used by the bootloader, so the application must not  */ 
+.................... /* use this area.                                                            */ 
+.................... /* ------------------------------------------------------------------------- */ 
+.................... //#org 0  , 0x000 {} 
+....................  
+.................... /* --- END: changes required for bootloader -------------------------------- */ 
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... #byte PORTD=0xF83 
+....................  
+....................  
+....................  
+....................  
+.................... void init(void); 
+.................... void timer0_int(void); 
+.................... void ext_int(void); 
+.................... int8 seconds=0; 
+....................  
+....................  
+.................... void main(){ 
+*
+0172:  CLRF   FF8
+0174:  BSF    FF1.2
+0176:  BSF    FD0.7
+0178:  BSF    07.7
+017A:  CLRF   28
+017C:  MOVF   FC1,W
+017E:  ANDLW  C0
+0180:  IORLW  0F
+0182:  MOVWF  FC1
+0184:  MOVLW  07
+0186:  MOVWF  FB4
+....................     init(); 
+0188:  BRA    0150
+....................     while (TRUE) 
+....................     { 
+018A:  BRA    018A
+....................         
+....................     } 
+.................... } 
+....................  
+018C:  BRA    018C
+.................... void init(){ 
+.................... set_tris_b(0xff); 
+*
+0150:  MOVLW  FF
+0152:  MOVWF  F93
+.................... set_tris_d(0x00); 
+0154:  MOVLW  00
+0156:  MOVWF  F95
+.................... setup_timer_0(T0_INTERNAL|T0_DIV_256); 
+0158:  MOVLW  87
+015A:  MOVWF  FD5
+.................... set_timer0(18660); 
+015C:  MOVLW  48
+015E:  MOVWF  FD7
+0160:  MOVLW  E4
+0162:  MOVWF  FD6
+.................... ext_int_edge(0,H_TO_L); 
+0164:  BCF    FF1.6
+.................... enable_interrupts(INT_TIMER0); 
+0166:  BSF    FF2.5
+.................... enable_interrupts(INT_EXT); 
+0168:  BSF    FF2.4
+.................... enable_interrupts(GLOBAL); 
+016A:  MOVLW  C0
+016C:  IORWF  FF2,F
+016E:  GOTO   018A (RETURN)
+.................... } 
+....................  
+....................  
+.................... #INT_TIMER0 HIGH 
+.................... void timer0_int(){ 
+....................     set_timer0(18660); 
+*
+0134:  MOVLW  48
+0136:  MOVWF  FD7
+0138:  MOVLW  E4
+013A:  MOVWF  FD6
+....................     seconds++; 
+013C:  INCF   28,F
+.................... } 
+....................  
+013E:  BCF    FF2.2
+0140:  GOTO   00F2
+.................... #INT_EXT 
+.................... void ext_int() 
+.................... { 
+....................     PORTD=seconds; 
+0144:  MOVFF  28,F83
+....................     seconds=0; 
+0148:  CLRF   28
+014A:  BCF    FF2.1
+014C:  GOTO   00F2
+.................... } 
+
+Configuration Fuses:
+   Word  1: 0E24   PLL5 CPUDIV1 USBDIV HSPLL NOFCMEN NOIESO
+   Word  2: 1E39   NOPUT NOBROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8000   CCP2B3 NOPBADEN NOLPT1OSC MCLR
+   Word  4: 0020   NOSTVREN NOLVP ICSP2 NOXINST DEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
+
+   Some fuses have been forced to be compatible with the ICD debugger.
