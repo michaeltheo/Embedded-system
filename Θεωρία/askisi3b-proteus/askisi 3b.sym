@@ -1,0 +1,76 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     isodos
+005     ekatondates
+006     decades
+007     monades
+008-017 table
+018     @delay_ms1.P1
+018     main.@SCRATCH1
+019     main.@SCRATCH2
+01A     @DIV88.P1
+01B     @DIV88.P1
+01C     @DIV88.@SCRATCH1
+F81     PORTB
+F82     PORTC
+F83     PSP_DATA
+F83     PORTD
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000808  @DIV88
+000830  @delay_ms1
+00085C  main
+00085C  @cinit1
+00086C  @cinit2
+
+Project Directory:
+    F:\Embedded Systems\Θεωρία\askisi3b-proteus\
+
+Project Files:
+    askisi 3b.c                                             [09-Μαϊ-21 01:06  CRC=9062D2E3]
+    main.h                                                  [26-Οκτ-13 07:54  CRC=0813682B]
+    18F4550.h                                               [10-Αυγ-13 01:40  CRC=A157EDDE]
+
+Source signature=DB2616CA
+
+Units:
+    askisi 3b (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   askisi 3b.xsym
+    Errors:      askisi 3b.err
+    Ext Symbols: askisi 3b.esym
+    INHX32:      askisi 3b.hex
+    Symbols:     askisi 3b.sym
+    List:        askisi 3b.lst
+    Debug/COFF:  askisi 3b.cof
+    Project:     askisi 3b.ccspjt
+    Call Tree:   askisi 3b.tre
+    Statistics:  askisi 3b.STA

@@ -1,0 +1,302 @@
+CCS PCH C Compiler, Version 5.011, 5967               09-���-21 01:07
+
+               Filename:   F:\Embedded Systems\������\askisi3b-proteus\askisi 3b.lst
+
+               ROM used:   326 bytes (1%)
+                           Largest free fragment is 30390
+               RAM used:   26 (1%) at main() level
+                           29 (1%) worst case
+               Stack used: 1 locations
+               Stack size: 31
+
+*
+0800:  GOTO   085C
+.................... #include <main.h> 
+.................... #include <18F4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+*
+0808:  MOVF   1B,W
+080A:  CLRF   01
+080C:  SUBWF  1A,W
+080E:  BC    0816
+0810:  MOVFF  1A,00
+0814:  BRA    082E
+0816:  CLRF   00
+0818:  MOVLW  08
+081A:  MOVWF  1C
+081C:  RLCF   1A,F
+081E:  RLCF   00,F
+0820:  MOVF   1B,W
+0822:  SUBWF  00,W
+0824:  BTFSC  FD8.0
+0826:  MOVWF  00
+0828:  RLCF   01,F
+082A:  DECFSZ 1C,F
+082C:  BRA    081C
+082E:  RETURN 0
+....................  
+.................... #list 
+....................  
+.................... #DEVICE HIGH_INTS=TRUE 
+.................... #device adc=10 
+....................  
+.................... #FUSES NOWDT                     //No Watch Dog Timer 
+.................... #FUSES WDT32768                    //Watch Dog Timer uses 1:128 Postscale 
+.................... #FUSES HSPLL                     //High Speed Crystal/Resonator with PLL enabled 
+.................... #FUSES NOPROTECT                 //Code not protected from reading 
+.................... #FUSES BROWNOUT                //No brownout reset 
+.................... //#FUSES BORV20                    //Brownout reset at 2.0V 
+.................... #FUSES NOPUT                     //No Power Up Timer 
+.................... #FUSES NOCPD                     //No EE protection 
+.................... #FUSES STVREN                    //Stack full/underflow will cause reset 
+.................... #FUSES NODEBUG                   //No Debug mode for ICD 
+.................... #FUSES NOLVP                     //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOWRT                     //Program memory not write protected 
+.................... #FUSES NOWRTD                    //Data EEPROM not write protected 
+.................... #FUSES NOIESO                      //Internal External Switch Over mode enabled 
+.................... #FUSES NOFCMEN                     //Fail-safe clock monitor enabled 
+.................... #FUSES NOPBADEN                 ///PORTB pins are configured as analog input channels on RESET 
+.................... #FUSES NOWRTC                    //configuration not registers write protected 
+.................... #FUSES NOWRTB                    //Boot block not write protected 
+.................... #FUSES NOEBTR                    //Memory not protected from table reads 
+.................... #FUSES NOEBTRB                   //Boot block not protected from table reads 
+.................... #FUSES NOCPB                     //No Boot Block code protection 
+.................... #FUSES MCLR                      //Master Clear pin enabled 
+.................... #FUSES NOLPT1OSC                   //Timer1 configured for low-power operation 
+.................... #FUSES NOXINST                   //Extended set extension and Indexed Addressing mode disabled (Legacy mode) 
+.................... #FUSES PLL5                      //Divide By 12(48MHz oscillator input) 
+.................... #FUSES CPUDIV1                   //System Clock by 2 
+.................... #FUSES USBDIV                    //USB clock source comes from PLL divide by 2 
+.................... #FUSES VREGEN                    //USB voltage regulator enabled 
+.................... #FUSES ICPRT                     //ICPRT enabled 
+.................... #FUSES WRTB 
+.................... #FUSES NOICPRT  
+.................... #FUSES NOLPT1OSC 
+.................... #FUSES CCP2B3  
+.................... #FUSES NOCPB 
+.................... #FUSES NOCPD 
+.................... #FUSES NOWRTC 
+.................... #FUSES NOWRTD 
+.................... #FUSES NOEBTR 
+.................... #FUSES NOEBTRB               
+....................  
+.................... /* systm clock is 48 MHz */ 
+.................... #use delay(clock=48000000,RESTART_WDT) 
+0830:  CLRF   FEA
+0832:  MOVLW  18
+0834:  MOVWF  FE9
+0836:  MOVF   FEF,W
+0838:  BZ    085A
+083A:  MOVLW  0F
+083C:  MOVWF  01
+083E:  MOVLW  BF
+0840:  MOVWF  00
+0842:  CLRWDT
+0844:  DECFSZ 00,F
+0846:  BRA    0842
+0848:  DECFSZ 01,F
+084A:  BRA    083E
+084C:  MOVLW  8F
+084E:  MOVWF  00
+0850:  DECFSZ 00,F
+0852:  BRA    0850
+0854:  CLRWDT
+0856:  DECFSZ FEF,F
+0858:  BRA    083A
+085A:  RETURN 0
+.................... /* --- BEGIN: changes required for bootloader ------------------------------ */ 
+....................  
+.................... /* ------------------------------------------------------------------------- */ 
+.................... /* map reset vector and interrupt vector                                     */ 
+.................... /* 0x000-0x7FF is used by the bootloader. The bootloader maps the original   */ 
+.................... /* reset vecotr (0x000) to 0x800 and the reset vector (0x008) to 0x800.      */ 
+.................... /* ------------------------------------------------------------------------- */ 
+.................... #build (reset=0x800, interrupt=0x808) 
+....................  
+.................... /* ------------------------------------------------------------------------- */ 
+.................... /* reserve boot block area                                                   */ 
+.................... /* This memory range is used by the bootloader, so the application must not  */ 
+.................... /* use this area.                                                            */ 
+.................... /* ------------------------------------------------------------------------- */ 
+.................... #org 0, 0x7FF {} 
+....................  
+.................... /* --- END: changes required for bootloader -------------------------------- */ 
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... #byte PORTB         =0xF81 //���������� ��� ���������� ��������� ��� ������ �     
+.................... #byte PORTC         =0xF82 //���������� ��� ���������� ��������� ��� ������ C 
+.................... #byte PORTD         =0xF83 // ���������� ��� ���������� ��������� ��� ������ D 
+....................  
+....................      int isodos,ekatondates,decades,monades; 
+....................      int8 table[16] ={ 0b00111111,      //Πίνακας με του κώδικες για 
+....................                                                     // εμφάνιση σε ενδείκτη 7 τομέων 
+....................                              0b00000110,   //των ψηφίων 0, 1, 2, … 9, … F. 
+....................                              0b01011011,   //κώδικας για εμφάνιση του 2 
+....................                              0b01001111,    //κώδικας για εμφάνιση του 3 
+....................                              0b01100110,    //κώδικας για εμφάνιση του 4 
+....................                              0b01101101,    //κώδικας για εμφάνιση του 5 
+....................                              0b01111101,     //κώδικας για εμφάνιση του 6 
+....................                              0b00000111,    //κώδικας για εμφάνιση του 7 
+....................                              0b01111111,     //κώδικας για εμφάνιση του 8 
+....................                              0b01101111,     //κώδικας για εμφάνιση του 9 
+....................                              0b01110111,     //κώδικας για εμφάνιση του Α 
+....................                              0b01111100,    //κώδικας για εμφάνιση του Β 
+....................                              0b00111001,    //κώδικας για εμφάνιση του C 
+....................                              0b01011110,     //κώδικας για εμφάνιση του D 
+....................                              0b01111001,     //κώδικας για εμφάνιση του Ε 
+....................                              0b01110001}; 
+....................  
+....................  
+.................... void main(){ 
+085C:  CLRF   FF8
+085E:  BSF    FD0.7
+0860:  MOVF   FC1,W
+0862:  ANDLW  C0
+0864:  IORLW  0F
+0866:  MOVWF  FC1
+0868:  MOVLW  07
+086A:  MOVWF  FB4
+086C:  MOVLW  3F
+086E:  MOVWF  08
+0870:  MOVLW  06
+0872:  MOVWF  09
+0874:  MOVLW  5B
+0876:  MOVWF  0A
+0878:  MOVLW  4F
+087A:  MOVWF  0B
+087C:  MOVLW  66
+087E:  MOVWF  0C
+0880:  MOVLW  6D
+0882:  MOVWF  0D
+0884:  MOVLW  7D
+0886:  MOVWF  0E
+0888:  MOVLW  07
+088A:  MOVWF  0F
+088C:  MOVLW  7F
+088E:  MOVWF  10
+0890:  MOVLW  6F
+0892:  MOVWF  11
+0894:  MOVLW  77
+0896:  MOVWF  12
+0898:  MOVLW  7C
+089A:  MOVWF  13
+089C:  MOVLW  39
+089E:  MOVWF  14
+08A0:  MOVLW  5E
+08A2:  MOVWF  15
+08A4:  MOVLW  79
+08A6:  MOVWF  16
+08A8:  MOVLW  71
+08AA:  MOVWF  17
+....................      set_tris_b(0xFF); 
+08AC:  MOVLW  FF
+08AE:  MOVWF  F93
+....................      set_tris_c(0x00); 
+08B0:  MOVLW  00
+08B2:  MOVWF  F94
+....................      set_tris_d(0x00); 
+08B4:  MOVWF  F95
+....................      while (TRUE) 
+....................      { 
+....................           isodos=PORTB; 
+08B6:  MOVFF  F81,04
+....................           ekatondates=isodos/100; 
+08BA:  MOVFF  04,1A
+08BE:  MOVLW  64
+08C0:  MOVWF  1B
+08C2:  RCALL  0808
+08C4:  MOVFF  01,05
+....................           decades=(isodos-ekatondates*100)/10; 
+08C8:  MOVF   05,W
+08CA:  MULLW  64
+08CC:  MOVF   FF3,W
+08CE:  SUBWF  04,W
+08D0:  MOVWF  19
+08D2:  MOVWF  1A
+08D4:  MOVLW  0A
+08D6:  MOVWF  1B
+08D8:  RCALL  0808
+08DA:  MOVFF  01,06
+....................           monades=isodos-ekatondates*100-decades*10; 
+08DE:  MOVF   05,W
+08E0:  MULLW  64
+08E2:  MOVF   FF3,W
+08E4:  SUBWF  04,W
+08E6:  MOVWF  18
+08E8:  MOVF   06,W
+08EA:  MULLW  0A
+08EC:  MOVF   FF3,W
+08EE:  SUBWF  18,W
+08F0:  MOVWF  07
+....................  
+....................           //show ekatondates 
+....................           PORTC=0b00000100; 
+08F2:  MOVLW  04
+08F4:  MOVWF  F82
+....................           PORTD=table[ekatondates]; 
+08F6:  CLRF   03
+08F8:  MOVF   05,W
+08FA:  ADDLW  08
+08FC:  MOVWF  FE9
+08FE:  MOVLW  00
+0900:  ADDWFC 03,W
+0902:  MOVWF  FEA
+0904:  MOVFF  FEF,F83
+....................           delay_ms(5); 
+0908:  MOVLW  05
+090A:  MOVWF  18
+090C:  RCALL  0830
+....................  
+....................           //show dekades 
+....................           PORTC=0b00000010; 
+090E:  MOVLW  02
+0910:  MOVWF  F82
+....................           PORTD=table[decades]; 
+0912:  CLRF   03
+0914:  MOVF   06,W
+0916:  ADDLW  08
+0918:  MOVWF  FE9
+091A:  MOVLW  00
+091C:  ADDWFC 03,W
+091E:  MOVWF  FEA
+0920:  MOVFF  FEF,F83
+....................           delay_ms(5); 
+0924:  MOVLW  05
+0926:  MOVWF  18
+0928:  RCALL  0830
+....................        
+....................       //show monades 
+....................           PORTC=0b00000001; 
+092A:  MOVLW  01
+092C:  MOVWF  F82
+....................           PORTD=table[decades]; 
+092E:  CLRF   03
+0930:  MOVF   06,W
+0932:  ADDLW  08
+0934:  MOVWF  FE9
+0936:  MOVLW  00
+0938:  ADDWFC 03,W
+093A:  MOVWF  FEA
+093C:  MOVFF  FEF,F83
+....................           delay_ms(5); 
+0940:  MOVLW  05
+0942:  MOVWF  18
+0944:  RCALL  0830
+0946:  BRA    08B6
+....................       
+....................      } 
+.................... } 
+0948:  SLEEP 
+
+Configuration Fuses:
+   Word  1: 0E24   PLL5 CPUDIV1 USBDIV HSPLL NOFCMEN NOIESO
+   Word  2: 1E3F   NOPUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8000   CCP2B3 NOPBADEN NOLPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP ICSP1 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: A00F   NOWRT NOWRTC WRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
