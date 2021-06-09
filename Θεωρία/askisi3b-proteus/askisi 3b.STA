@@ -13,26 +13,26 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   54    18 100  askisi 3b.c
+   58    18 100  askisi 3b.c
    68     0   0  main.h
   821     0   0  18F4550.h
 ----- -----
-  943    18 Total
+  947    18 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     44   7    1             @delay_ms1
-0    238  37    2   538  4.3  main
+0    238  37    2   604  4.5  main
 0     40   6    3             @DIV88
  Inline         0             @cinit1
 
 Program metrics:
     Functions               1
     Statements              18
-    Comments                178
-    Volume (V)              545
-    Difficulty (D)          4.0
-    Effort to implement (E) 2201
+    Comments                175
+    Volume (V)              612
+    Difficulty (D)          4.2
+    Effort to implement (E) 2588
     Time to implement (T)   2 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   1

@@ -1,0 +1,102 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     kbd_getc.kbd_call_count
+005.0   kbd_getc.kbd_down
+006     kbd_getc.last_key
+007     kbd_getc.col
+008     MAIN.k
+009     kbd_getc.kchar
+009     lcd_init.i
+009     lcd_putc.c
+00A     @delay_ms1.P1
+00A     lcd_gotoxy.x
+00A     kbd_getc.row
+00A     lcd_init.@SCRATCH1
+00B     lcd_gotoxy.y
+00B     ALL_ROWS.@SCRATCH1
+00B     kbd_getc.@SCRATCH1
+00C     lcd_gotoxy.address
+00C     kbd_getc.@SCRATCH2
+00D     lcd_gotoxy.@SCRATCH1
+00E     lcd_send_byte.address
+00F     lcd_send_byte.n
+010     lcd_send_byte.@SCRATCH1
+011     lcd_send_nibble.nibble
+F81     PORTB
+F83     PORTD
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  KEYS.call
+000014  KEYS.data
+000024  LCD_INIT_STRING.call
+000034  LCD_INIT_STRING.data
+000038  init
+000040  @delay_ms1
+00006C  lcd_send_nibble
+0000BC  lcd_send_byte
+0000F8  lcd_init
+00015C  kbd_init
+000164  ALL_ROWS
+00019C  kbd_getc
+000284  @goto10598
+0002A6  lcd_gotoxy
+0002C8  lcd_putc
+00030C  MAIN
+00030C  @cinit1
+00031C  @cinit2
+
+Project Directory:
+    C:\Users\User\Dropbox\MIKRO II\’σκηση 9\Proteus 9B\
+
+Project Files:
+    exercise_9B.c                                           [12-Δεκ-18 22:04  CRC=779F51DD]
+    main-proteus.h                                          [10-Μαρ-14 22:41  CRC=9C188644]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [09-Αυγ-13 14:40  CRC=A157EDDE]
+    keypad-proteus.h                                        [12-Δεκ-18 21:12  CRC=879EF771]
+    flex_lcd-proteus.h                                      [12-Δεκ-18 20:50  CRC=73472502]
+
+Source signature=233D0774
+
+Units:
+    exercise_9B (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+
+Output Files:
+    XREF file:   exercise_9B.xsym
+    Errors:      exercise_9B.err
+    Ext Symbols: exercise_9B.esym
+    INHX32:      exercise_9B.hex
+    Symbols:     exercise_9B.sym
+    List:        exercise_9B.lst
+    Debug/COFF:  exercise_9B.cof
+    Project:     exercise_9B.ccspjt
+    Call Tree:   exercise_9B.tre
+    Statistics:  exercise_9B.STA

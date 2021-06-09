@@ -1,0 +1,10 @@
+ÀÄexercise-9A
+   ÀÄMAIN  0/48  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄinit  0/10  Ram=0
+      ÃÄkbd_init  0/12  Ram=0
+      ÀÄkbd_getc  0/232  Ram=4
+         ÃÄ@goto10598  0/34  Ram=0
+         ÃÄALL_ROWS  0/56  Ram=1
+         ÃÄALL_ROWS  0/56  Ram=1
+         ÀÄ@const634  0/32  Ram=0

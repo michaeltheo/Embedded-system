@@ -1,7 +1,8 @@
-D G "__PCH__" 0 0 ""5.011""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""09-Ìבת-21""
-D G "__TIME__" 0 0 ""01:07:08"" "Standard Header file for the PIC18F4550 device ////////////////"
+C L "main" 0 7 11 "FUNCTION"
+D G "__PCH__" 0 75 ""5.011""
+D G "__DEVICE__" 0 75 "4550"
+D G "__DATE__" 0 75 ""13-Ìבת-21""
+D G "__TIME__" 0 75 ""13:04:18"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 5 21 "FUNCTION"
 v L "value" 2 36 "int8" `54 
 f B "set_tris_a" 2 36 "void(int8 value)" `53 
@@ -902,33 +903,30 @@ d G "INT_SPP" 2 817 "0x009D80"
 d G "INT_USB" 2 818 "0x00A020"
 C L "jump_to_irs" 1 10 5 "FUNCTION"
 C L "jump_to_irs" 1 10 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
 V G "isodos" 0 6 "int8" `637 
 V G "ekatondates" 0 6 "int8" `638 
 V G "decades" 0 6 "int8" `639 
 V G "monades" 0 6 "int8" `640 
 V G "table" 0 7 "int8[16]" `641 
-C L "jump_to_irs" 0 2 2 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
-F G "main" 0 26 "void()" `642 
-C L "main" 0 2 1 "FUNCTION"
-C L "main" 0 2 1 "FUNCTION"
-C L "main" 0 2 1 "FUNCTION"
+C L "jump_to_irs" 0 7 2 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+F G "main" 0 25 "void()" `642 
+C L "main" 0 7 1 "FUNCTION"
+C L "main" 0 7 1 "FUNCTION"
+C L "main" 0 7 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

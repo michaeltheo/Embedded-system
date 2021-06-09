@@ -1,0 +1,91 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     lcd_init.i
+005     MAIN.@SCRATCH1
+005     @PSTRINGC_646.@SCRATCH1
+006     lcd_init.@SCRATCH1
+006     @PSTRINGC_646.@SCRATCH2
+007     lcd_putc.c
+008     lcd_gotoxy.x
+008     @delay_ms1.P1
+009     lcd_gotoxy.y
+00A     lcd_gotoxy.address
+00B     lcd_gotoxy.@SCRATCH1
+00C     lcd_send_byte.address
+00D     lcd_send_byte.n
+00E     lcd_send_byte.@SCRATCH1
+00F     lcd_send_nibble.nibble
+F81     PORTB
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const654.call
+00001A  @const656.call
+000024  @const657.call
+00002A  @const658.call
+000030  @delay_ms1
+00005C  lcd_send_nibble
+0000AC  lcd_send_byte
+0000E8  lcd_init
+00014C  lcd_gotoxy
+00016E  lcd_putc
+0001B2  @PSTRINGC_646
+0001D2  MAIN
+0001D2  @cinit1
+0001E2  @cinit2
+
+Project Directory:
+    C:\Users\User\Dropbox\MIKRO II\’σκηση 7\Proteus 7B\
+
+Project Files:
+    exercise 7B.c                                           [30-Νοε-18 19:29  CRC=6D6700DB]
+    main-proteus.h                                          [10-Μαρ-14 22:41  CRC=9C188644]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [09-Αυγ-13 14:40  CRC=A157EDDE]
+    flex_lcd-proteus.h                                      [06-Απρ-14 10:43  CRC=73472502]
+
+Source signature=9165BF01
+
+Units:
+    exercise 7B (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+
+Output Files:
+    XREF file:   exercise 7B.xsym
+    Errors:      exercise 7B.err
+    Ext Symbols: exercise 7B.esym
+    INHX32:      exercise 7B.hex
+    Symbols:     exercise 7B.sym
+    List:        exercise 7B.lst
+    Debug/COFF:  exercise 7B.cof
+    Project:     exercise 7B.ccspjt
+    Call Tree:   exercise 7B.tre
+    Statistics:  exercise 7B.STA

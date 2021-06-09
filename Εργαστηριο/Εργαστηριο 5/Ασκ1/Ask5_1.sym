@@ -1,0 +1,129 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A     @INTERRUPT_AREA
+01B     @INTERRUPT_AREA
+01C     @INTERRUPT_AREA
+01D     @INTERRUPT_AREA
+01E     @INTERRUPT_AREA
+01F     @INTERRUPT_AREA
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     des
+029-02A tenthseconds
+02B-02C tenthseconds_stop
+02D     counter
+02E.0   start
+02E.1   stop
+02F-03E table
+03F-041 dig
+042     main.@SCRATCH1
+043     main.@SCRATCH2
+044-045 timer0_int.mon
+046-047 timer0_int.dec
+048-049 timer0_int.eka
+04A     @DIV88.P1
+04A     timer0_int.@SCRATCH1
+04B     @DIV88.P1
+04B     timer0_int.@SCRATCH2
+04C-04D @MUL1616.P1
+04C-04D @DIV1616.P2
+04C     @DIV88.@SCRATCH1
+04E-04F @DIV1616.P1
+04E-04F @MUL1616.P2
+050     @DIV1616.@SCRATCH1
+050     @MUL1616.@SCRATCH1
+F81     PORTB
+F82     PORTC
+F83     PORTD
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000128  @DIV1616
+00016A  @MUL1616
+000188  @DIV88
+0001B2  timer0_int
+0002E2  init
+000318  main
+000318  @cinit1
+000336  @cinit2
+
+Project Directory:
+    F:\Embedded Systems\Εργαστηριο\Εργαστηριο 5\Ασκ1\
+
+Project Files:
+    Ask5_1.c                                                [13-Μαϊ-21 03:11  CRC=E3C3193B]
+    main-proteus.h                                          [11-Μαρ-14 00:41  CRC=9C188644]
+    M:\CSS\Devices\18F4550.h                                [09-Αυγ-13 16:40  CRC=A157EDDE]
+
+Source signature=C28B7B3B
+
+Units:
+    Ask5_1 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+
+Output Files:
+    XREF file:   Ask5_1.xsym
+    Errors:      Ask5_1.err
+    Ext Symbols: Ask5_1.esym
+    INHX32:      Ask5_1.hex
+    Symbols:     Ask5_1.sym
+    List:        Ask5_1.lst
+    Debug/COFF:  Ask5_1.cof
+    Project:     Ask5_1.ccspjt
+    Call Tree:   Ask5_1.tre
+    Statistics:  Ask5_1.STA

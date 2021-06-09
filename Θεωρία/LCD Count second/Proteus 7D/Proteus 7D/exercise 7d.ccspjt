@@ -1,0 +1,20 @@
+[PROJECT]
+Target=exercise 7d.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=exercise 7d.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[exercise 7d.c]
+Type=4
+[mru-list]
+1=exercise 7d.c
+[Opened Files]
+1=exercise 7d.c
+2=main-proteus.h
+3=
+[Units]
+Count=1
+1=exercise 7d (main)

@@ -1,0 +1,82 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     kbd_getc.kbd_call_count
+005.0   kbd_getc.kbd_down
+006     kbd_getc.last_key
+007     kbd_getc.col
+008     MAIN.k
+009     kbd_getc.kchar
+00A     kbd_getc.row
+00B     ALL_ROWS.@SCRATCH1
+00B     kbd_getc.@SCRATCH1
+00C     kbd_getc.@SCRATCH2
+F81     PORTB
+F83     PORTD
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  KEYS.call
+000014  KEYS.data
+000024  init
+00002E  kbd_init
+00003A  ALL_ROWS
+000072  kbd_getc
+00015A  @goto10598
+00017C  MAIN
+00017C  @cinit1
+00018C  @cinit2
+
+Project Directory:
+    C:\Users\User\Dropbox\MIKRO II\’σκηση 9\Proteus 9A\
+
+Project Files:
+    exercise-9A.c                                           [12-Δεκ-18 21:55  CRC=4858E8A5]
+    main-proteus.h                                          [10-Μαρ-14 22:41  CRC=9C188644]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [09-Αυγ-13 14:40  CRC=A157EDDE]
+    keypad-proteus.h                                        [09-Δεκ-18 20:34  CRC=41DD223D]
+    flex_lcd-proteus.h                                      [09-Δεκ-18 19:59  CRC=73472502]
+
+Source signature=AE34C908
+
+Units:
+    exercise-9A (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+
+Output Files:
+    XREF file:   exercise-9A.xsym
+    Errors:      exercise-9A.err
+    Ext Symbols: exercise-9A.esym
+    INHX32:      exercise-9A.hex
+    Symbols:     exercise-9A.sym
+    List:        exercise-9A.lst
+    Debug/COFF:  exercise-9A.cof
+    Project:     exercise-9A.ccspjt
+    Call Tree:   exercise-9A.tre
+    Statistics:  exercise-9A.STA

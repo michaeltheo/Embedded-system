@@ -1,0 +1,39 @@
+ÀÄexercise 7B
+   ÀÄMAIN  0/120  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄlcd_init  0/100  Ram=2
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄlcd_send_nibble  0/80  Ram=1
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄlcd_send_nibble  0/80  Ram=1
+      ³  ÃÄ@const634  0/20  Ram=0
+      ³  ÃÄlcd_send_byte  0/60  Ram=3
+      ³  ³  ÃÄlcd_send_nibble  0/80  Ram=1
+      ³  ³  ÀÄlcd_send_nibble  0/80  Ram=1
+      ³  ÀÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@PSTRINGC_646  0/32  Ram=2
+      ³  ÀÄlcd_putc  0/68  Ram=1
+      ³     ÃÄlcd_send_byte  0/60  Ram=3
+      ³     ³  ÀÄ*
+      ³     ÃÄ@delay_ms1  0/44  Ram=1
+      ³     ÃÄlcd_gotoxy  0/34  Ram=4
+      ³     ³  ÀÄlcd_send_byte  0/60  Ram=3
+      ³     ³     ÀÄ*
+      ³     ÃÄlcd_send_byte  0/60  Ram=3
+      ³     ³  ÀÄ*
+      ³     ÀÄlcd_send_byte  0/60  Ram=3
+      ³        ÀÄ*
+      ÃÄlcd_gotoxy  0/34  Ram=4
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_646  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄlcd_gotoxy  0/34  Ram=4
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_646  0/32  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/44  Ram=1
+      ÃÄlcd_gotoxy  0/34  Ram=4
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_646  0/32  Ram=2
+      ³  ÀÄ*
+      ÀÄ@delay_ms1  0/44  Ram=1

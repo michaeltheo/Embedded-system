@@ -1,0 +1,43 @@
+ÀÄexercise 7d
+   ÃÄMAIN  0/44  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄinit  0/34  Ram=0
+   ³  ÃÄlcd_init  0/232  Ram=2
+   ³  ³  ÃÄ@delay_ms1  0/44  Ram=1
+   ³  ³  ÃÄlcd_send_nibble  0/80  Ram=1
+   ³  ³  ÃÄ@delay_ms1  0/44  Ram=1
+   ³  ³  ÃÄlcd_send_nibble  0/80  Ram=1
+   ³  ³  ÃÄ@const634  0/36  Ram=0
+   ³  ³  ÃÄlcd_send_byte  0/60  Ram=3
+   ³  ³  ³  ÃÄlcd_send_nibble  0/80  Ram=1
+   ³  ³  ³  ÀÄlcd_send_nibble  0/80  Ram=1
+   ³  ³  ÀÄ@delay_ms1  0/44  Ram=1
+   ³  ÀÄ@PSTRINGC_646  0/56  Ram=2
+   ³     ÀÄlcd_putc  0/66  Ram=1
+   ³        ÃÄlcd_send_byte  0/60  Ram=3
+   ³        ³  ÀÄ*
+   ³        ÃÄ@delay_ms1  0/44  Ram=1
+   ³        ÃÄlcd_gotoxy  0/34  Ram=4
+   ³        ³  ÀÄlcd_send_byte  0/60  Ram=3
+   ³        ³     ÀÄ*
+   ³        ÃÄlcd_send_byte  0/60  Ram=3
+   ³        ³  ÀÄ*
+   ³        ÀÄlcd_send_byte  0/60  Ram=3
+   ³           ÀÄ*
+   ÀÄtimer0_int  0/60  Ram=0
+      ÃÄlcd_gotoxy  0/34  Ram=4
+      ³  ÀÄ*
+      ÃÄ@PSTRINGCN_646  0/32  Ram=3
+      ³  ÀÄlcd_putc  0/66  Ram=1
+      ³     ÀÄ*
+      ÀÄ@PRINTF_D_646  0/172  Ram=6
+         ÃÄ@DIV88  0/40  Ram=3
+         ÃÄ@DIV88  0/40  Ram=3
+         ÃÄlcd_putc  0/66  Ram=1
+         ³  ÀÄ*
+         ÃÄlcd_putc  0/66  Ram=1
+         ³  ÀÄ*
+         ÃÄlcd_putc  0/66  Ram=1
+         ³  ÀÄ*
+         ÀÄlcd_putc  0/66  Ram=1
+            ÀÄ*

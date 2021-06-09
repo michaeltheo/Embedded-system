@@ -1,0 +1,23 @@
+#include <main-proteus.h>
+#include <lcd.c>
+
+#byte PORTB=0xf81 // στην θέση 0xf81 είναι ο καταχωρητής δεδομένων 
+                  //της πόρτας Β
+                  
+void LCD_SetPosition ( unsigned int cX );
+void LCD_PutChar ( unsigned int cX );   
+
+void main() {
+
+
+//*************************************************
+             set_tris_b(0x00);
+             LCD_Init();        
+             LCD_SetPosition(LINE_1+5);
+             LCD_PutChar("ELECTRONICS");
+             
+
+while(TRUE) {}     // τέλος του προγράμματος, εκτελείται συνεχώς ένας βρόχος
+
+            }      // κλείνει η αγκύλη του main
+

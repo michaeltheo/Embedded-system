@@ -1,0 +1,20 @@
+[PROJECT]
+Target=Ask5_1.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=Ask5_1.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[Ask5_1.c]
+Type=4
+[mru-list]
+1=Ask5_1.c
+[Opened Files]
+1=C:\Users\Michael\AppData\Local\Temp\Rar$DIa1716.44511\askisi 3c.c
+2=Ask5_1.c
+3=
+[Units]
+Count=1
+1=Ask5_1 (main)

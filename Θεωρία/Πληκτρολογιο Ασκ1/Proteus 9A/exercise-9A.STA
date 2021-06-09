@@ -1,0 +1,53 @@
+
+ROM used:   428/31936 (1%)
+            428/31936 (1%) including unused fragments
+
+            0.4 Average locations per line
+            3.9 Average locations per statement
+
+RAM used:   9/2036 (0%) at main() level
+            13/2036 (1%) worst case
+
+Stack used: 2 worst case (2 in main + 0 for interrupts)
+Stack size: 30
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   36    10   9  exercise-9A.c
+   69     0   0  main-proteus.h
+  821     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  127    55  50  keypad-proteus.h
+  144    44  40  flex_lcd-proteus.h
+----- -----
+ 1197   109 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     32   4    0             @const634
+0     12   1    0    37  1.1  kbd_init
+0     56   7    1   125  3.0  ALL_ROWS
+0    232  27    4  1590  7.7  kbd_getc
+0     34   4    0             @goto10598
+0     48   6    1   130  3.0  MAIN
+0     10   1    0    38  1.4  init
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               5
+    Statements              109
+    Comments                209
+    Volume (V)              2342
+    Difficulty (D)          16.6
+    Effort to implement (E) 38852
+    Time to implement (T)   36 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   15
+    Maintainability (MI)    61
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07CBE   424  31508  
+
+
+

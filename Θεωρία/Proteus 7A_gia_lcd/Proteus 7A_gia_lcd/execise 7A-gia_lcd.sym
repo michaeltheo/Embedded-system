@@ -1,0 +1,81 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     LCD_PutCmd.cX
+005     LCD_SetPosition.cX
+005     @PSTRINGC_637.@SCRATCH1
+006     LCD_SetPosition.@SCRATCH1
+006     @PSTRINGC_637.@SCRATCH2
+007     LCD_PutChar.cX
+008     @delay_ms1.P1
+008     LCD_SetData.cX
+F81     PORTB
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @const648.call
+000010  @const650.call
+000016  LCD_SetData
+000048  @delay_ms1
+000074  LCD_PulseEnable
+00008A  LCD_PutCmd
+0000B8  LCD_Init
+000132  LCD_SetPosition
+000158  LCD_PutChar
+000190  @PSTRINGC_637
+0001B0  @cinit1
+0001B0  MAIN
+0001C0  @cinit2
+
+Project Directory:
+    C:\Users\User\Dropbox\дипае\лахглата дипае\емсылатылема сустглата\╒СЙГСГ 7\Proteus 7A_gia_lcd\
+
+Project Files:
+    execise 7A-gia_lcd.c                                    [29-аПЯ-20 15:33  CRC=8436367A]
+    main-proteus.h                                          [10-лАЯ-14 23:41  CRC=9C188644]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [09-аУЦ-13 15:40  CRC=A157EDDE]
+    gia_lcd.h                                               [29-аПЯ-20 15:24  CRC=7EA35DF3]
+
+Source signature=BEED6682
+
+Units:
+    execise 7A-gia_lcd (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+
+Output Files:
+    XREF file:   execise 7A-gia_lcd.xsym
+    Errors:      execise 7A-gia_lcd.err
+    Ext Symbols: execise 7A-gia_lcd.esym
+    INHX32:      execise 7A-gia_lcd.hex
+    Symbols:     execise 7A-gia_lcd.sym
+    List:        execise 7A-gia_lcd.lst
+    Debug/COFF:  execise 7A-gia_lcd.cof
+    Project:     execise 7A-gia_lcd.ccspjt
+    Call Tree:   execise 7A-gia_lcd.tre
+    Statistics:  execise 7A-gia_lcd.STA

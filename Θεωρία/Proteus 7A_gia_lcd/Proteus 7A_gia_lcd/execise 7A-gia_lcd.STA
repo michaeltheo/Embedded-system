@@ -1,0 +1,56 @@
+
+ROM used:   496/31936 (2%)
+            496/31936 (2%) including unused fragments
+
+            0.5 Average locations per line
+            7.9 Average locations per statement
+
+RAM used:   4/2036 (0%) at main() level
+            8/2036 (0%) worst case
+
+Stack used: 4 worst case (4 in main + 0 for interrupts)
+Stack size: 30
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   21     9  14  execise 7A-gia_lcd.c
+   69     0   0  main-proteus.h
+  821     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  101    54  86  gia_lcd.h
+----- -----
+ 1012    63 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     44   4    1             @delay_ms1
+0    122  12    0   508  1.4  LCD_Init
+0     38   4    2   147  1.8  LCD_SetPosition
+0     56   6    1   202  1.4  LCD_PutChar
+0     46   5    1   179  1.4  LCD_PutCmd
+0     22   2    0    72  1.2  LCD_PulseEnable
+0     50   5    1   174  2.3  LCD_SetData
+0     64   6    0   170  2.1  MAIN
+0     12   1    0             @const648
+0     32   3    2             @PSTRINGC_637
+0      6   1    0             @const650
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               7
+    Statements              63
+    Comments                178
+    Volume (V)              2261
+    Difficulty (D)          11.4
+    Effort to implement (E) 25788
+    Time to implement (T)   24 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    155
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07CBE   492  31440  
+
+
+

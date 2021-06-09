@@ -1,0 +1,19 @@
+[PROJECT]
+Target=LCDTimer.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=LCDTimer.c
+[Directories]
+Include=M:\CSS\Devices\;M:\CSS\Drivers\
+[LCDTimer.c]
+Type=4
+[mru-list]
+1=LCDTimer.c
+[Opened Files]
+1=LCDTimer.c
+2=
+[Units]
+Count=1
+1=LCDTimer (main)

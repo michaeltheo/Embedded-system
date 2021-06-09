@@ -1,0 +1,118 @@
+#include <main-proteus.h>
+#use standard_io (A)
+#use standard_io (B)
+#use standard_io (C)
+
+#byte PORTD=0xF83
+#byte PORTB=0xF81
+#byte PORTC=0xF82
+
+void init(void);
+void timer0_int(void);
+int8 time;
+int16 time_Help=0;
+int1 start=0;
+int1 stop=0;
+int16 tenthseconds,tenthseconds_stop=0;
+
+
+int8 table[16] ={ 0b00111111,      //Πίνακας με του κώδικες για
+                                                    // εμφάνιση σε ενδείκτη 7 τομέων
+                             0b00000110,   //των ψηφίων 0, 1, 2, … 9, … F.
+                             0b01011011,   //κώδικας για εμφάνιση του 2
+                             0b01001111,    //κώδικας για εμφάνιση του 3
+                             0b01100110,    //κώδικας για εμφάνιση του 4
+                             0b01101101,    //κώδικας για εμφάνιση του 5
+                             0b01111101,     //κώδικας για εμφάνιση του 6
+                             0b00000111,    //κώδικας για εμφάνιση του 7
+                             0b01111111,     //κώδικας για εμφάνιση του 8
+                             0b01101111,     //κώδικας για εμφάνιση του 9
+                             0b01110111,     //κώδικας για εμφάνιση του Α
+                             0b01111100,    //κώδικας για εμφάνιση του Β
+                             0b00111001,    //κώδικας για εμφάνιση του C
+                             0b01011110,     //κώδικας για εμφάνιση του D
+                             0b01111001,     //κώδικας για εμφάνιση του Ε
+                             0b01110001};
+
+
+int8 dig[3]={1,2,4};
+int8 des=0;
+
+
+
+void main(){
+    init();
+    while (1)
+    {
+        if((INPUT(PIN_D1)==0) && start==0)
+        {
+            start=1;
+        }else if(start==1 && INPUT(PIN_D1)==1){
+            stop=1;
+        }else{
+            stop=0;
+        }
+    }
+    
+    
+}
+
+
+void init(){
+    set_tris_b(0x00);
+    set_tris_d(0xFF);
+    set_tris_c(0x00);
+    PORTB=0;
+    PORTC=0;
+    time=300;
+    start=0;
+    stop=0;
+    des=0;
+    tenthseconds=0;
+    tenthseconds_stop=0;
+    setup_timer_0(T0_INTERNAL|T0_DIV_1);
+    set_timer0(65536);
+    enable_interrupts(INT_TIMER0);
+    enable_interrupts(GLOBAL);
+}
+
+#INT_TIMER0 HIGH
+void timer0_int(){
+
+    int16 mon,dec,eka;
+    time--;
+    if(INPUT(PIN_D3)==0){
+        time=300; 
+    }
+    if(INPUT(PIN_D0)==1){
+        time_Help=time; 
+    }
+    
+    if(time==280){
+        eka=(int8)(time_Help/100);
+        dec=(int8)((time_Help-(100*eka))/10);
+        mon=(int8)(time_Help-(100*eka)-(10*dec));
+    }
+    set_timer0(65536);
+    des=++des%3;
+    PORTC=dig[des];
+
+
+    if(des==0)
+    {
+        delay_ms(5000);
+        PORTB=table[mon];
+    }
+    if(des==1)
+    {
+        delay_ms(5000);
+        PORTB=table[dec];
+    }
+    if(des==2)
+    {
+        delay_ms(5000);
+        PORTB=table[eka];
+    }
+    
+
+}

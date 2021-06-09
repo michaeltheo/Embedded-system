@@ -1,0 +1,24 @@
+D G "__PCH__" 2 12 ""5.011""
+D G "__DEVICE__" 2 12 ""
+D G "__DATE__" 2 12 ""03-Ιουν-21""
+D G "__TIME__" 2 12 ""12:47:06"" "#FUSES BORV20                    //Brownout reset at 2.0V"
+D G "row0" 2 2 "PIN_b4"
+D G "row1" 2 3 "PIN_b5"
+D G "row2" 2 4 "PIN_b6"
+D G "row3" 2 5 "PIN_b7"
+D G "col0" 2 6 "PIN_b0"
+D G "col1" 2 7 "PIN_b1"
+D G "col2" 2 8 "PIN_b2"
+D G "col3" 2 9 "PIN_b3"
+F B "delay_ms" 1 0
+F B "delay_us" 1 0
+F B "delay_ms" 1 0
+F B "delay_us" 1 0
+F B "delay_ms" 1 0
+F B "delay_us" 1 0
+F B "delay_ms" 1 0
+F B "delay_us" 1 0
+F B "delay_ms" 1 0
+F B "delay_us" 1 0
+F B "delay_ms" 1 0
+F B "delay_us" 1 0

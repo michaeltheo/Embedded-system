@@ -1,0 +1,17 @@
+D G "__PCH__" 2 12 ""5.011""
+D G "__DEVICE__" 2 12 ""
+D G "__DATE__" 2 12 ""27-Ìבת-21""
+D G "__TIME__" 2 12 ""12:08:52"" "#FUSES BORV20                    //Brownout reset at 2.0V"
+D G "LCD_DB4" 2 2 "PIN_B4"
+D G "LCD_DB5" 2 3 "PIN_B5"
+D G "LCD_DB6" 2 4 "PIN_B6"
+D G "LCD_DB7" 2 5 "PIN_B7"
+D G "LCD_E" 2 7 "PIN_B3"
+D G "LCD_RS" 2 8 "PIN_B2"
+D G "LCD_RW" 2 9 "PIN_B1"
+D G "lcd_type" 2 10 "2" "0=5x7, 1=5x10, 2=2 lines"
+D G "lcd_line_two" 2 11 "0x40" "LCD RAM address for the 2nd line"
+F B "delay_ms" 1 0
+F B "delay_us" 1 0
+F B "delay_ms" 1 0
+F B "delay_us" 1 0

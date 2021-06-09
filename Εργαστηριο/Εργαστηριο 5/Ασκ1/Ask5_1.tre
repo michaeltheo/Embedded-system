@@ -1,0 +1,11 @@
+ÀÄAsk5_1
+   ÃÄmain  0/142  Ram=2
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÀÄinit  0/54  Ram=0
+   ÀÄtimer0_int  0/304  Ram=8
+      ÃÄ@DIV1616  0/66  Ram=5
+      ÃÄ@MUL1616  0/30  Ram=5
+      ÃÄ@DIV1616  0/66  Ram=5
+      ÃÄ@MUL1616  0/30  Ram=5
+      ÃÄ@MUL1616  0/30  Ram=5
+      ÀÄ@DIV88  0/42  Ram=3

@@ -1,0 +1,21 @@
+[PROJECT]
+Target=exercise_9C.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=exercise_9C.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[exercise_9C.c]
+Type=4
+[mru-list]
+1=exercise_9C.c
+[Opened Files]
+1=exercise_9C.c
+2=main-proteus.h
+3=..\..\Πληκτρολογιο Ασκ1\Proteus 9A\keypad-proteus.h
+4=
+[Units]
+Count=1
+1=exercise_9C (main)

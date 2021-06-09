@@ -1,0 +1,19 @@
+[PROJECT]
+Target=exercise-9A.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=exercise-9A.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[exercise-9A.c]
+Type=4
+[mru-list]
+1=exercise-9A.c
+[Opened Files]
+1=exercise-9A.c
+2=
+[Units]
+Count=1
+1=exercise-9A (main)

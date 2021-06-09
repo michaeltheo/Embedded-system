@@ -1,0 +1,33 @@
+ÀÄexercise_9B
+   ÀÄMAIN  0/62  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄinit  0/8  Ram=0
+      ÃÄlcd_init  0/100  Ram=2
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄlcd_send_nibble  0/80  Ram=1
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄlcd_send_nibble  0/80  Ram=1
+      ³  ÃÄ@const648  0/20  Ram=0
+      ³  ÃÄlcd_send_byte  0/60  Ram=3
+      ³  ³  ÃÄlcd_send_nibble  0/80  Ram=1
+      ³  ³  ÀÄlcd_send_nibble  0/80  Ram=1
+      ³  ÀÄ@delay_ms1  0/44  Ram=1
+      ÃÄkbd_init  0/8  Ram=0
+      ÃÄkbd_getc  0/232  Ram=4
+      ³  ÃÄ@goto10598  0/34  Ram=0
+      ³  ÃÄALL_ROWS  0/56  Ram=1
+      ³  ÃÄALL_ROWS  0/56  Ram=1
+      ³  ÀÄ@const634  0/32  Ram=0
+      ÃÄlcd_gotoxy  0/34  Ram=4
+      ³  ÀÄlcd_send_byte  0/60  Ram=3
+      ³     ÀÄ*
+      ÀÄlcd_putc  0/68  Ram=1
+         ÃÄlcd_send_byte  0/60  Ram=3
+         ³  ÀÄ*
+         ÃÄ@delay_ms1  0/44  Ram=1
+         ÃÄlcd_gotoxy  0/34  Ram=4
+         ³  ÀÄ*
+         ÃÄlcd_send_byte  0/60  Ram=3
+         ³  ÀÄ*
+         ÀÄlcd_send_byte  0/60  Ram=3
+            ÀÄ*

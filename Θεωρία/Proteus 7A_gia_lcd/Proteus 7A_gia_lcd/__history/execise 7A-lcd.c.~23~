@@ -1,0 +1,37 @@
+#include <main-proteus.h>
+#include <lcd.c>  // Προσοχή!!!! Χρησιμοποιούμε την lcd.h και όχι την flex_lcd
+                  // το h αρχείο του προγράμματος οδήγησης της οθόνης θα           
+                  // πρέπει να είναι στον ίδιο φάκελο όπου θα αποθηκεύσουμε
+                  //το πρόγραμμα μας
+                  //θα πρέπει να γίνει έλεγχος και πιθανόν τροποποίηση 
+                  // στις δηλώσεις #define LCD_DB4 PIN_B4 κλπ που
+                  // υπάρχουν στην lcd.h. Με αυτές τις
+                  // δηλώσεις καθορίζεται σε ποιους ακροδέκτες του 
+                  // μικροελεγκτή συνδέεται η οθόνη.
+                  
+#define LINE_1  0x00
+#define LINE_2  0x40
+#define CLEAR_DISP  0x01
+
+#byte PORTB=0xf81 // στην θέση 0xf81 είναι ο καταχωρητής δεδομένων 
+                  //της πόρτας Β
+
+
+void LCD_Init ( void );
+void LCD_SetPosition ( unsigned int cX );
+void LCD_PutChar ( unsigned int cX );
+void LCD_PutCmd ( unsigned int cX );
+void LCD_PulseEnable ( void );
+void LCD_SetData ( unsigned int cX );            
+
+void main() {
+             set_tris_b(0x00);
+             LCD_Init();        
+             LCD_SetPosition (LINE_1+5);
+             printf(LCD_PutChar, "ELECTRONICS");
+             
+
+while(TRUE) {}     // τέλος του προγράμματος, εκτελείται συνεχώς ένας βρόχος
+
+            }      // κλείνει η αγκύλη του main
+

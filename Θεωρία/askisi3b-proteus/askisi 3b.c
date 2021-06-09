@@ -1,9 +1,14 @@
 #include <main.h>
-#byte PORTB         =0xF81 //���������� ��� ���������� ��������� ��� ������ �    
-#byte PORTC         =0xF82 //���������� ��� ���������� ��������� ��� ������ C
-#byte PORTD         =0xF83 // ���������� ��� ���������� ��������� ��� ������ D
+//des C0=0000 0001
+//des C2=0000 0010
+//des C3=0000 0100
+//an to C3 itan 0000 0011 tote tha aneve kai to C1 to C0
+//giauto to des einai des={1,2,4}
+#byte PORTB         =0xF81 
+#byte PORTC         =0xF82 
+#byte PORTD         =0xF83 
 
-     int isodos,ekatondates,decades,monades;
+     int8 isodos,ekatondates,decades,monades;
      int8 table[16] ={ 0b00111111,      //Πίνακας με του κώδικες για
                                                     // εμφάνιση σε ενδείκτη 7 τομέων
                              0b00000110,   //των ψηφίων 0, 1, 2, … 9, … F.
@@ -22,32 +27,36 @@
                              0b01111001,     //κώδικας για εμφάνιση του Ε
                              0b01110001};
 
-
 void main(){
      set_tris_b(0xFF);
      set_tris_c(0x00);
      set_tris_d(0x00);
      while (TRUE)
      {
+          
           isodos=PORTB;
-          ekatondates=isodos/100;
-          decades=(isodos-ekatondates*100)/10;
-          monades=isodos-ekatondates*100-decades*10;
+          ekatondates=(int8)(isodos/100);
+          decades=(int8)(isodos-(ekatondates*100))/10;
+          monades=(int8)(isodos-(ekatondates*100)-(decades*10));
 
           //show ekatondates
           PORTC=0b00000100;
           PORTD=table[ekatondates];
-          delay_ms(5);
+          delay_ms(200);
+          
 
           //show dekades
           PORTC=0b00000010;
           PORTD=table[decades];
-          delay_ms(5);
+          delay_ms(200);
+          
       
       //show monades
-          PORTC=0b00000001;
-          PORTD=table[decades];
-          delay_ms(5);
+         PORTC=0b00000001;
+          PORTD=table[monades];
+          delay_ms(200);
+          
+        
      
      }
 }

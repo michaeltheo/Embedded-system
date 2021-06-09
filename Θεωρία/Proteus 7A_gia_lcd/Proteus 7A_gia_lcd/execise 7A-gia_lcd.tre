@@ -1,0 +1,68 @@
+ÀÄexecise 7A-gia_lcd
+   ÀÄMAIN  0/64  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄLCD_Init  0/122  Ram=0
+      ³  ÃÄLCD_SetData  0/50  Ram=1
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_SetData  0/50  Ram=1
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_PulseEnable  0/22  Ram=0
+      ³  ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ³  ÀÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_PulseEnable  0/22  Ram=0
+      ³  ³  ÀÄ*
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_PulseEnable  0/22  Ram=0
+      ³  ³  ÀÄ*
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_SetData  0/50  Ram=1
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_PulseEnable  0/22  Ram=0
+      ³  ³  ÀÄ*
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_PutCmd  0/46  Ram=1
+      ³  ³  ÃÄLCD_SetData  0/50  Ram=1
+      ³  ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ³  ÃÄLCD_PulseEnable  0/22  Ram=0
+      ³  ³  ³  ÀÄ*
+      ³  ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ³  ÃÄLCD_SetData  0/50  Ram=1
+      ³  ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ³  ÃÄLCD_PulseEnable  0/22  Ram=0
+      ³  ³  ³  ÀÄ*
+      ³  ³  ÀÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_PutCmd  0/46  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_PutCmd  0/46  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_PutCmd  0/46  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄ@delay_ms1  0/44  Ram=1
+      ÃÄLCD_SetPosition  0/38  Ram=2
+      ³  ÃÄLCD_SetData  0/50  Ram=1
+      ³  ÃÄLCD_PulseEnable  0/22  Ram=0
+      ³  ³  ÀÄ*
+      ³  ÃÄ@delay_ms1  0/44  Ram=1
+      ³  ÃÄLCD_SetData  0/50  Ram=1
+      ³  ÃÄLCD_PulseEnable  0/22  Ram=0
+      ³  ³  ÀÄ*
+      ³  ÀÄ@delay_ms1  0/44  Ram=1
+      ÃÄ@PSTRINGC_637  0/32  Ram=2
+      ³  ÀÄLCD_PutChar  0/56  Ram=1
+      ³     ÃÄ@delay_ms1  0/44  Ram=1
+      ³     ÃÄLCD_SetData  0/50  Ram=1
+      ³     ÃÄLCD_PulseEnable  0/22  Ram=0
+      ³     ³  ÀÄ*
+      ³     ÃÄ@delay_ms1  0/44  Ram=1
+      ³     ÃÄLCD_SetData  0/50  Ram=1
+      ³     ÀÄLCD_PulseEnable  0/22  Ram=0
+      ³        ÀÄ*
+      ÃÄLCD_SetPosition  0/38  Ram=2
+      ³  ÀÄ*
+      ÃÄ@PSTRINGC_637  0/32  Ram=2
+      ³  ÀÄ*
+      ÀÄ@delay_ms1  0/44  Ram=1

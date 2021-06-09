@@ -1,0 +1,19 @@
+[PROJECT]
+Target=execise 7A-gia_lcd.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.011
+Compiler=PCH
+[Target Data]
+FileList=execise 7A-gia_lcd.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[execise 7A-gia_lcd.c]
+Type=4
+[mru-list]
+1=execise 7A-gia_lcd.c
+[Opened Files]
+1=execise 7A-gia_lcd.c
+2=
+[Units]
+Count=1
+1=execise 7A-gia_lcd (main)

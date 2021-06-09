@@ -1,0 +1,122 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     kbd_getc.kbd_call_count
+005.0   kbd_getc.kbd_down
+006     kbd_getc.last_key
+007     kbd_getc.col
+008     state
+009     N1
+00A     N2
+00B     sum
+00C     MAIN.k
+00D     kbd_getc.kchar
+00D     lcd_init.i
+00D     @PRINTF_D_660.P1
+00D     MAIN.@SCRATCH1
+00D     @PSTRINGC_660.@SCRATCH1
+00E     kbd_getc.row
+00E     @PRINTF_D_660.P1
+00E     lcd_init.@SCRATCH1
+00E     @PSTRINGC_660.@SCRATCH2
+00F     ALL_ROWS.@SCRATCH1
+00F     kbd_getc.@SCRATCH1
+00F     @PRINTF_D_660.@SCRATCH1
+010     kbd_getc.@SCRATCH2
+010     @PRINTF_D_660.@SCRATCH2
+011     @PRINTF_D_660.@SCRATCH3
+012     @PRINTF_D_660.@SCRATCH4
+013     @DIV88.P1
+013     lcd_putc.c
+014     @delay_ms1.P1
+014     lcd_gotoxy.x
+014     @DIV88.P1
+015     lcd_gotoxy.y
+015     @DIV88.@SCRATCH1
+016     lcd_gotoxy.address
+017     lcd_gotoxy.@SCRATCH1
+018     lcd_send_byte.address
+019     lcd_send_byte.n
+01A     lcd_send_byte.@SCRATCH1
+01B     lcd_send_nibble.nibble
+F81     PORTB
+F83     PORTD
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  KEYS.call
+000014  KEYS.data
+000024  LCD_INIT_STRING.call
+000034  LCD_INIT_STRING.data
+000038  @const684.call
+00003A  init
+000042  @delay_ms1
+00006E  lcd_send_nibble
+0000BE  lcd_send_byte
+0000FA  lcd_init
+00015E  kbd_init
+000166  ALL_ROWS
+00019E  kbd_getc
+000284  @goto10598
+0002A6  @DIV88
+0002CE  lcd_gotoxy
+0002F2  lcd_putc
+000334  @PRINTF_D_660
+0003DE  @PSTRINGC_660
+000400  MAIN
+000400  @cinit1
+000418  @cinit2
+
+Project Directory:
+    C:\Users\tinag\Dropbox\ΔΙΠΑΕ\ΜΑΘΗΜΑΤΑ ΔΙΠΑΕ\ΕΝΣΩΜΑΤΩΜΕΝΑ ΣΥΣΤΗΜΑΤΑ\Ασκήσεις εργαστηρίου ενσωματωμένα συστ Καζακόπουλος\Exercise_09 keypad\Proteus 9C addition keypad-lcd\
+
+Project Files:
+    exercise_9C.c                                           [02-Ιουν-21 11:31  CRC=DD353E70]
+    main-proteus.h                                          [10-Μαρ-14 23:41  CRC=9C188644]
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [09-Αυγ-13 16:40  CRC=A157EDDE]
+    keypad-proteus.h                                        [12-Δεκ-18 22:12  CRC=879EF771]
+    flex_lcd-proteus.h                                      [12-Δεκ-18 21:50  CRC=73472502]
+
+Source signature=88D2F407
+
+Units:
+    exercise_9C (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+
+Output Files:
+    XREF file:   exercise_9C.xsym
+    Errors:      exercise_9C.err
+    Ext Symbols: exercise_9C.esym
+    INHX32:      exercise_9C.hex
+    Symbols:     exercise_9C.sym
+    List:        exercise_9C.lst
+    Debug/COFF:  exercise_9C.cof
+    Project:     exercise_9C.ccspjt
+    Call Tree:   exercise_9C.tre
+    Statistics:  exercise_9C.STA
